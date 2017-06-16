@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Responsive</title>
+
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/js/lib/video/video.js/video.js/dist/video-js.min.css" rel="stylesheet">
+    <script src="/js/lib/video/video.js/video.js/dist/ie8/videojs-ie8.min.js"></script>
+    <script src="/js/lib/video/video.js/video.js/dist/video.min.js"></script>
+    <script src="/js/lib/jquery-3.1.0.js"></script>
+</head>
+<body>
+
+<img class="leaf" id="leafTopLeft" src="assets/upper_left.png">
+<img class="leaf" id="leafTopRight" src="assets/upper_right.png">
+<img class="leaf" id="leafBottomLeft" src="assets/leaf_left.png">
+<img class="leaf" id="leafBottomRight" src="assets/leaf_right.png">
+
+<div id="startButton" style="display: none;"><img src="assets/StartButton3.jpg" style="width: 100%; height: auto;"></div>
+
+<div class="wrapper" id="videoWrapper">
+    <div class="videocontent">
+        <video id="player"
+               class="video-js vjs-default-skin"
+               controls preload="auto">
+            <source src="assets/HD_overlayed_hovers.mp4" type="video/mp4" />
+            <source src="assets/HD_overlayed_hovers.webm" type='video/webm' />
+            <source src="assets/HD_overlayed_hovers.ogv" type='video/ogg' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+    </div>
+</div>
+
+<div id="pointerInfoIconContainer" class="pointerInfoIconContainer">
+    <img src="assets/ponter_icon.png" class="pointerInfoContent" id="pointerInfoImage">
+    <div class="pointerInfoContent">Выберите сектор</div>
+</div>
+
+<div id="allZonesContainer"  style="pointer-events: none; position: absolute; z-index: 20; border: 0;">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="allZonesSVG" style="border: 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99.6%" height="99.6%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path class="zoomInButton" data-scene="1" d="M 637.667,402.001 696.667,462.334 697.125,489.875
+		680.667,494.334 655.625,501.625 623.375,509.75 597.781,513.906 569.875,517.875 550.251,519.834 528.376,521.043
+		508.501,521.672 490.334,522.001 451.793,520.917 452,493.001 456.333,439.334 450,434.001 448.333,427.334 450,419.334
+		458.333,414.001 458.333,394.667 493.667,371.334 527,389.667 551.334,375.334 559.334,374.334 567,374.667 573.334,376.001
+		583.334,369.667 593.334,375.001 602.667,369.667 636.667,385.667 	z"></path>
+<path class="zoomInButton" data-scene="2" d="M 456.666,405.668 450.666,400.001 445.999,400.001
+		439.332,400.001 433.999,398.001 426.666,401.834 421.666,398.001 413.999,398.001 409.999,398.001 405.332,398.001
+		403.332,393.001 397.666,393.001 390.999,391.334 386.332,394.001 382.666,392.668 378.332,394.668 368.999,391.334
+		362.999,384.334 360.332,385.668 357.666,387.668 355.999,382.668 352.666,382.668 350.666,381.334 346.999,383.334
+		343.332,383.334 340.666,381.334 337.999,375.334 334.332,375.334 328.332,377.334 241.332,448.668 241.332,477.334
+		263.999,486.001 298.666,497.334 334.999,506.334 365.666,512.334 391.999,516.334 420.666,519.334 450.167,520.833
+		450.333,493.333 455.167,440 448.333,434.333 447,427.333 448.333,418.667 456.666,412.667 	z"></path>
+<path class="zoomInButton" data-scene="3" d="M 327,376.688 324.667,369.167 321.667,367.5 321.667,364.167
+		315.5,361.5 310.167,357.167 303.5,356.5 302.667,350 296.667,347.167 292,349.5 286,354 277.167,347.167 269.167,340 263,333.5
+		258.167,327.666 254.833,323.333 267.833,323.333 267.833,307 206.167,307 206.167,322.5 233.667,322.833 232.667,331.667
+		225.667,337.334 204.667,338 199.667,341.167 191.667,342.667 184.333,341.167 112.333,351.667 112.333,380 127.375,399.25
+		145.375,418.125 165.25,434.375 182.375,446.5 198.375,456 215.625,465.125 228.25,470.875 239.875,476.25 239.875,448.084 	z"></path>
+<path class="zoomInButton" data-scene="4" d="M 111,378.125 111,350.125 184.5,339.125 191.625,341.125
+		199.125,339.875 204,336.125 224.875,336.125 231.5,330.875 232.25,323.875 205,323.875 204.875,305.875 244.25,305.875
+		241,297.75 238.75,288 241.25,276.75 244.25,269 249,260.75 239,256.5 218.75,256.5 212.5,254.5 203.75,254.5 198.5,250.25
+		195.5,243.5 192.75,239 188,239 183.25,244.75 182,251 177,251 169.75,250.75 167.25,245.5 163.75,241 158.75,242.25 155.5,247.5
+		155,250.25 147,248.75 143.25,245.5 140,249 135.75,247.75 132.5,245.25 126.5,244.5 123,245.5 116,244.25 112.333,239
+		106.25,236.25 101.25,240.75 97.5,242 93.667,252.667 90.667,265.667 89.333,284.334 91.167,326.167 94.167,339.5 98.833,353.333
+		104.333,365.833 	z"></path>
+<path class="zoomInButton" data-scene="5" d="M 138.75,181.25 132,188.25 123.5,197 120.5,197 116.25,197
+		116.25,201 113.75,202.5 111.5,204.75 111.5,207.5 113.75,209.75 111.5,212.25 108.75,212.25 105.75,212.25 105.75,216.5
+		103.75,218.5 102.5,221 104,223.75 102.5,227 99.5,227 99.5,230 99.5,233.5 96.75,235 96.75,237.5 97.438,239.25 98.563,240.188
+		106.313,234.5 113,237.625 116.75,242.813 122.938,243.938 126.188,242.938 133.188,243.938 136.438,246.438 139.75,247.563
+		143.25,243.5 147.563,247.563 154,248.75 154.438,247.063 157.563,241 164.375,239.125 168.375,244.688 170.688,249.625
+		181,249.625 182,244.625 187.5,237.125 193.5,237.313 196.938,242.875 199.688,249.25 204.313,253.063 213.063,253.063
+		219.063,254.938 240.167,254.938 250.083,259.75 253,254.5 257.5,248 262,243.25 269.75,235 275,230.5 281,225.25 266.5,212.5
+		255.75,210.5 250.75,208.25 245,207.5 240.5,206.5 235.25,203.75 228.5,204.5 224,201.5 218,201.25 215,200 210.5,199.5
+		210.75,197.75 240.5,197.25 241.5,185.5 175,186.25 172,191 166.25,190.25 162.75,189 158.25,189.75 155.5,187.75 152.5,187.75
+		146,185.5 144.25,182.75 	z"></path>
+<path class="zoomInButton" data-scene="6" d="M267.083,210.75l15.667,13.583l16-10.917l16.583-9.083l13.917-6.5
+		l19.667-7.917l5.583-1.5L354,162l-3.75-9.833L350,132.938h17.625V117.75l-20.708-0.417l-26-11.917L317,100.083l-1.833-7.583
+		L306,94.25l-19.833,5.667l-4.833-4L275.75,92L269,91.417l-3.833,3c0,0-2.667,3.417-2.75,3.667s-0.917,2.667-0.917,2.667l0.583,2.5
+		l3.083,2.583l-0.917,1.667l-2.75,0.25l-7.417-4.25l-3.333-2.083l-5.75-0.25l-3.5,2.417l-2.417,2.75l-1.917,3.417l0.583,2.917
+		l1.75,2.833l-0.25,1.583L235.167,119l-3.75-0.667l-4-1.083l-1.75-2.5l-4.333-1L217,114.417l-3.417,3.667l-2.417,3.25l-0.667,3.583
+		l1.333,2.917l1,1.5l-2.917,1.333l-2.5,1.75l-3.583-0.667l-3.583,0.333l-1.5-1.083l-3.333-1.917l-4.167-0.25l-3.833,1.833
+		l-2.75,3.333l-1.417,3.417v2.5l1,2.25l1.5,2.25l-4.167,3.667l-3.25-0.833l-2.583-0.333l-3.5,1.083l-1.75,2.583l-1.833,2.083v3.417
+		l-4.833,4.167l-1.583-0.667l-2.833,0.25l-2.5,1.667l-1.583,2.833l-1.083,3l-14.5,12.5l5.167,1.417L147,184.5l5.417,1.75h3.333
+		l3,2.25l4.167-1l3.75,1.583l4.667,0.583l3.333-4.917l68.417-0.5l-1.333,14l-17.667,0.583l0.167,1.25l4.583,2.833l6.583-0.75
+		l6,2.833l9.667,1.667l5.5,2.5L267.083,210.75z"></path>
+<path class="zoomInButton" data-scene="7" d="M 355.667,162.167 355.667,188 375.667,181.833
+		401.667,175.083 422.833,172.833 441.667,170.667 467.167,169.5 494.625,169.375 516.75,170.25 539.875,172.25 564.75,176.125
+		564.75,148.875 568.375,146.875 575.75,145.875 582.375,139.5 581.5,135.625 577.75,133.375 576.875,131 588.188,121.344
+		588.169,118.75 562.334,118.75 562.375,101.75 596.625,101.625 615.75,83.5 604,81.25 595.375,79.625 583.625,78.375 583.5,53.625
+		563.625,50.375 563.5,45.125 537.25,41.75 536.5,47.75 526.25,46.25 521.25,54.375 521.125,72.375 513.875,72.375 513.375,67.375
+		482.625,50.375 463.625,61.5 463.75,57.75 461.375,53 456.75,49.75 450.375,49.125 443.375,51 440.75,54.125 438.75,53.875
+		433.625,52.875 428.875,55.75 427.125,59.5 426.625,64.25 425.5,67.125 421.5,68.25 418,69.625 411.875,70.375 406.625,70.875
+		403.75,72.25 401.625,73.75 399.125,76.25 392.125,77.25 393.375,73 392.625,64.625 390.75,59 387.875,55.75 383.75,54.125
+		379.5,55.625 376.375,59 375,62.875 374.875,66.625 374.875,70.25 374.875,75.25 375.625,79.375 371.25,80.125 363.25,82
+		363.25,78.75 361.875,70.5 359.75,65.125 356.25,62.375 351.375,62.625 346.375,66.625 345.25,70.375 345.25,76 344.625,83
+		342.5,82.75 338.25,81.25 334.375,83 330.467,83 327.563,83.25 323.188,84.188 318.125,88 316.5,91.688 318.25,99.688 322,104.563
+		337.5,111.25 347.313,115.875 369.125,115.875 369.313,134 369.375,134.75 351.438,134.688 351.875,152.375 	z"></path>
+<path class="zoomInButton" data-scene="8" d="M 597.25,102.875 564.5,103.625 564.5,116.375
+		590.375,116.375 589.875,121.25 579.25,131.25 582.375,134.125 583.75,139.625 576.875,147.25 567.25,149.375 566.375,176.375
+		588.5,180.5 609.875,186.625 631.25,194.5 649.5,202.125 667.25,210.5 683.75,222 694.75,230.5 694.75,203 757,164.5 757,153
+		724.75,152.5 724.5,134.25 776.5,132.75 776.5,111 773,104.75 767.25,102.875 758.5,101.25 753,102.75 747.5,105.75 744.5,109
+		743.25,115.25 742.25,121 738.5,119.25 736.75,114.75 731.25,110.25 726.75,108.5 722.25,107.75 716.25,109.5 712.5,109.25
+		709.5,107.75 709,89.75 705.25,87 702.25,82.5 702.5,79.75 704.5,75.5 705,70.25 702.25,62.75 699.167,58.167 694.833,54.667
+		690.75,53 686.083,53.833 666.917,65.417 644.333,40.75 643.333,39.917 621.25,59.75 621.916,61.5 628.5,69.667 625.166,73.417
+		624.166,79.417 620.833,84.083 616.917,84.333 	z"></path>
+<path class="zoomInButton" data-scene="9" d="M 732,294 759.5,300.5 765.5,303 771.5,298.5 780.5,303
+		786.5,307 805,312.5 828.5,323 873,327.5 873,351.5 878.5,336.5 880.333,322.75 881.833,304.5 881.833,272.666 880.833,263.333
+		879,256.166 900.666,256.166 900.666,238.666 873.833,238.666 872.833,235.333 870.833,232 869.167,227.833 870,225.333
+		868.833,222.666 868,211.833 871,210 871,207.333 869.5,205.167 869.166,194 868.666,189.167 865.167,186.5 862.5,186.5
+		861.5,183.167 858.833,180.833 854.333,180.833 853.667,178 851.5,176 848.833,176 847.833,173.833 846.333,171 843.833,170
+		842.167,170 841,167.167 839.5,165.5 837.667,165.5 833.833,164.333 833.167,162 831.833,160.5 830.333,159.667 828.333,159.667
+		827.875,157.5 827,154.875 825,153.25 821.625,152.625 819.75,152.625 819.375,150.25 818.125,148.5 815,147.875 813.75,147.875
+		813.5,145.625 812.25,143.625 810.125,142.25 806.5,142.25 803.75,142.25 801.125,143.125 799.5,140.875 798.375,135.208
+		726.583,135.75 726.625,151 758.875,151.75 758.75,164.75 696.125,204.625 696.125,232 703.5,238.75 709,244.125 714.5,251
+		719.875,258.625 724.25,266 729.5,276.25 731.5,284.75 732,290 	z"></path>
+<path class="zoomInButton" data-scene="10" d="M 731.834,296.334 729.501,304.001 725.001,312.501
+		718.167,323.834 712.001,331.667 705.167,338.667 716.167,343.834 716.334,338.667 722.001,338.501 726.501,340.667
+		729.25,343.834 730.5,347.75 735.5,349.75 744,354.25 746.75,357 752.5,360 755.5,363 755.5,373.5 789.75,373.5 789.75,381
+		789.75,386.75 787.25,392 787.75,396.25 808.75,406.5 808.75,433.25 821.75,422 834.5,410 846.25,397.25 857.25,382.5 865,369.667
+		871.25,356.25 871.688,328.938 828.063,324.625 804.438,314 785.75,308.688 779.563,304.25 771.813,300.25 765.688,304.875
+		758.938,302 	z"></path>
+<path class="zoomInButton" data-scene="11" d="M 704.001,339.666 697.667,345.166 689.501,351.5
+		679.001,359.333 670.167,364 664.001,367.5 660.334,367.5 658.167,369.667 656.001,372 646.167,377.5 633.167,382.166
+		638.668,385.166 639.168,401.5 641.001,403 698.501,461.833 698.813,489.448 736.667,474.166 752.001,466.666 766.334,459.333
+		787.167,447.833 797.667,440.5 807.167,434.166 807.167,407.625 786.375,397.125 785.625,391.75 788.428,386.25 788.428,374.875
+		754.5,374.625 754.25,363.375 751.875,360.75 746.25,358.125 743.125,355 729.75,348.375 728,344 725.875,341.625 721.75,339.666
+		717.688,339.666 717.375,346 	z"></path>
+</svg>
+</div>
+
+<!-- hovers -->
+<!--
+<div class="hoversContainer" id="hoversContainer">
+    <img src="assets/hovers/zone1_hovered.png" class="hoverZoneImage">
+    <img src="assets/hovers/zone2_hovered.png" class="hoverZoneImage">
+    <img src="assets/hovers/zone3_hovered.png" class="hoverZoneImage">
+    <img src="assets/hovers/zone4_hovered.png" class="hoverZoneImage">
+    <img src="assets/hovers/zone5_hovered.png" class="hoverZoneImage">
+    <img src="assets/hovers/zone6_hovered.png" class="hoverZoneImage">
+    <img src="assets/hovers/zone7_hovered.png" class="hoverZoneImage">
+    <img src="assets/hovers/zone8_hovered.png" class="hoverZoneImage">
+    <img src="assets/hovers/zone9_hovered.png" class="hoverZoneImage">
+    <img src="assets/hovers/zone10_hovered.png" class="hoverZoneImage">
+    <img src="assets/hovers/zone11_hovered.png" class="hoverZoneImage">
+</div>
+-->
+
+<!-- BACK BUTTONS -->
+<div class="zoomOutButton" id="zoomOutButton1" style="display: none;" >
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene1ZoomOutButton" class="SVGHoverablePath" data-scene="1" fill-opacity="0" fill="#CCCCCC" d="M 358,23 289,68 289,103 227,264 227,319 292.5,324 385,324
+	474,318 562,309 670,288 757,262 809,245 652,112 654,48 583,16 566,28 540,16 524,30 509,26 486,28 460,38 430,57 z"></path>
+</svg></div>
+<div class="zoomOutButton" id="zoomOutButton2" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene2Button" data-scene="2" class="SVGHoverablePath" fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0" fill="#CCCCCC" d="M 486,28 293,164 293,221 351,245 443,271 535,297 653,315
+	740,323 740,270 761,91 730,79 711,73 698,82 687,73 656,72 646,61 601,66 573,57 564,48 544,44 527,42 511,28 502,28 z"/>
+</svg>
+</div>
+<div class="zoomOutButton" id="zoomOutButton3" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+        <path id="scene3Button" data-scene="3" class="SVGHoverablePath" fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0" fill="#CCCCCC" d="M 718,40 423,81 423,132 459,201 513,270 584,325 642,361
+	700,388 897,199 872,186 868,165 825,156 824,143 804,145 761,107 742,84 772,84 770,55 727,54 z"/>
+    </svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton4" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene4Button" data-scene="4" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 914,194.633 914,143.633 645,88.633 633,101.633 620,97.633
+	620,110.633 612,114.633 612,122.633 612,132.633 601,129.633 601,141.633 592,146.633 592,154.633 587,163.633 587,174.633
+	580,176.633 580,186.633 583,185.633 576.5,202.133 571.5,219.133 568.5,235.133 565,265.965 569,357.965 574.334,384.633
+	585.667,415.965 769,381.965 804.334,324.633 876.334,315.633 867,285.299 878.334,252.299 889.667,226.632 905,205.299 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton5" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+ <path id="scene5Button" data-scene="5" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 567.667,376.333 865,390.333 867.667,410.333
+	886.334,358.333 904.334,331.667 941,294.333 867.667,246.333 869,207 737.667,207 675.667,187 638.334,223.667 609,261.667
+	585,308.333 572.334,349 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton6" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene6Button" data-scene="6" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 511.666,386.333 752.999,463.667 796.333,481.667
+	834.999,461 873.666,441 946.999,414.333 946.999,284.333 829.666,237 779.666,249.667 751.666,229.667 729.332,250.333
+	740.999,262.333 726.333,266.333 699.666,247.667 682.333,270 690.999,281 673.666,289 640.333,275.667 625.666,296.333
+	635.666,307 619.666,315 586.333,305.667 568.999,327.667 580.333,337.667 564.333,345.667 548.333,347 540.333,362.333
+	530.333,371.667 517.666,373 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton7" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene7Button" data-scene="7" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 245,483 245,535 322,520 423,509 514,509 601,521 660,535
+	734,402 734,382 728,342 653,327 654,277 615,270 613,259 565,252 564,262 540,263 532,278 531,316 512,317 510,305 451,270
+	411,295 406,279 393,270 378,270 366,281 353,278 342,287 338,303 324,313 299,314 283,325 263,326 261,283 232,284 232,331
+	207,335 202,293 171,300 171,341 150,340 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton8" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene8Button" data-scene="8" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 144,179 107,215 119,233 107,242 107,259 97,270 51,412
+	51,461 74,469 108,480 155,500 202,526 335,499 335,477 352,447 397,453 466,407 459,394 459,369 415,367 413,320 396,303 371,305
+	355,316 350,345 337,335 328,321 308,315 290,318 279,313 274,275 267,270 258.5,260 266,250 269,228 258.5,212 246,202 234,202
+	194,227 149,179 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton9" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene9Button" data-scene="9" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 34,260 34,314 53,336 70,367 79,397 79,418 73,433 357,502
+	366,528 374,505 381,457 381,400 381,349 375,333 420,335 420,302 366,302 357,279 356,203 232,103 220,112 212,141 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton10" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene10Button" data-scene="10" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 434.333,128.333 141.667,81.667 133.667,105 113,139
+	79.667,175.667 43,205 9.667,227.667 207,365 288.333,365 328.333,333 369.667,289.667 400.333,249.667 423.667,206.333
+	439.667,159.667 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton11" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="100%" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene11Button" data-scene="11" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 430.333,195 237.667,42.333 151.667,101.667 143.667,103.667
+	139,111 87,134.333 198.333,303 207.667,351 281,327.667 333,304.334 389.667,270 437,239 z"></path>
+</svg>
+</div>
+<div class="overlay_back_button" style="display: none;" id="backButton"><img src="assets/zoomout_icon_small1.png" id="zoomOutMagnifierImage"></div>
+<button id="stopButton" style="display: none;">STOP</button>
+
+<div id="frameContainer" class="frameContainer"></div>
+
+</body>
+<script src="/js/div0/collections/Map.js"></script>
+<script src="/js/div0/collections/List.js"></script>
+<script src="/js/div0/collections/iterators/MapIterator.js"></script>
+<script src="/js/div0/collections/iterators/ListIterator.js"></script>
+<script src="/js/div0/events/EventBus.js"></script>
+
+<script src="/js/div0/utils/VideoDimensions.js"></script>
+<script src="/js/div0/TimeRange.js"></script>
+<script src="/js/div0/Scene.js"></script>
+<script src="/js/div0/IntroScene.js"></script>
+<script src="/js/div0/Player.js"></script>
+<script src="/js/div0/PathHoverListener.js"></script>
+<script src="/js/div0/ZoomOutButtonClickListener.js"></script>
+<script src="/js/div0/ShowZoomOutButton.js"></script>
+<script src="/js/div0/HideZoomOutButton.js"></script>
+<script src="/js/div0/SceneText.js"></script>
+<script src="/js/div0/SceneTextCollection.js"></script>
+<script src="/js/div0/SceneLeavesCollection.js"></script>
+<script src="/js/div0/CommonScenePointerInfo.js"></script>
+<script src="/js/div0/SceneBackButton.js"></script>
+<script src="/js/div0/VideoSources.js"></script>
+<!--<script src="/js/div0/ZoomInButtonListener.js"></script>-->
+<script src="/js/div0/ZoomInButtonListenerJS.js"></script>
+<script src="/js/div0/StartButtonListener.js"></script>
+
+<script src="/js/div0/Application.js"></script>
+<script src="/js/resp.js"></script>
+<script src="/js/div0/FullscreenListener.js"></script>
+<script src="/js/appInit.js"></script>
+</html>

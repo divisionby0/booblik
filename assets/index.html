@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video testing</title>
+    <script src="/js/lib/video/video.js/video.js/dist/ie8/videojs-ie8.min.js"></script>
+    <link href="/js/lib/video/video.js/video.js/dist/video-js.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <script src="/js/lib/video/video.js/video.js/dist/video.min.js"></script>
+    <script src="/js/lib/video/video.js/video.js/dist/videojs-playlist.min.js"></script>
+    <script src="/js/lib/jquery-3.1.0.js"></script>
+</head>
+<body>
+
+<video id="player"
+       class="video-js vjs-default-skin"
+       controls preload="auto"
+       width="960"
+       height="540">
+    <source src="assets/HD.mp4" type="video/mp4" />
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+
+
+<button class="overlay_back_button" style="display: none;" id="backButton">Назад</button>
+
+<div id="sceneTextContainer" class="overlayElement sceneText noselect"></div>
+
+<div id="allZonesContainer" class="allZones"></div>
+
+<!-- BACK BUTTONS -->
+<div class="zoomOutButton" id="zoomOutButton1" style="display: none;" >
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene1ZoomOutButton" class="SVGHoverablePath" data-scene="1" fill-opacity="0" fill="#CCCCCC" d="M 358,23 289,68 289,103 227,264 227,319 292.5,324 385,324
+	474,318 562,309 670,288 757,262 809,245 652,112 654,48 583,16 566,28 540,16 524,30 509,26 486,28 460,38 430,57 z"></path>
+</svg></div>
+
+<div class="zoomOutButton" id="zoomOutButton2" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene2Button" data-scene="2" class="SVGHoverablePath" fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0" fill="#CCCCCC" d="M 486,28 293,164 293,221 351,245 443,271 535,297 653,315
+	740,323 740,270 761,91 730,79 711,73 698,82 687,73 656,72 646,61 601,66 573,57 564,48 544,44 527,42 511,28 502,28 z"/>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton3" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+        <path id="scene3Button" data-scene="3" class="SVGHoverablePath" fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0" fill="#CCCCCC" d="M 718,40 423,81 423,132 459,201 513,270 584,325 642,361
+	700,388 897,199 872,186 868,165 825,156 824,143 804,145 761,107 742,84 772,84 770,55 727,54 z"/>
+    </svg>
+</div>
+
+</body>
+
+<script src="js/lib/raphael.min.js"></script>
+
+<script src="/js/div0/collections/Map.js"></script>
+<script src="/js/div0/collections/List.js"></script>
+<script src="/js/div0/collections/iterators/MapIterator.js"></script>
+<script src="/js/div0/collections/iterators/ListIterator.js"></script>
+<script src="/js/div0/events/EventBus.js"></script>
+
+<script src="/js/div0/TimeRange.js"></script>
+<script src="/js/div0/Scene.js"></script>
+<script src="/js/div0/IntroScene.js"></script>
+<script src="/js/div0/Player.js"></script>
+<script src="/js/div0/PathHoverListener.js"></script>
+<script src="/js/div0/ZoomOutButtonClickListener.js"></script>
+<script src="/js/div0/ShowZoomOutButton.js"></script>
+<script src="/js/div0/HideZoomOutButton.js"></script>
+<script src="/js/div0/SceneText.js"></script>
+<script src="/js/div0/SceneTextCollection.js"></script>
+<script src="/js/div0/Application.js"></script>
+<script src="/js/div0/Zones.js"></script>
+<script src="/js/appInit.js"></script>
+<!--<script src="/js/PontsToPathConverter.js"></script>-->
+</html>

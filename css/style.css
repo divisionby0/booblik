@@ -1,0 +1,288 @@
+html, body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #b9d7ad;
+}
+.wrapper{
+    margin: 0;
+    height: 100%;
+}
+
+#player{
+    position: absolute;
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+}
+
+.fullscreenPlayer{
+    top: 0;
+    left: 0;
+}
+
+video {
+    background-color: transparent !important;
+}
+.video-js, .vjs-no-js{
+    background-color: #b9d7ad !important;
+}
+
+.video_overlays {
+    position:absolute;
+    float:left;
+    width:640px;
+    z-index:300000;
+    font-size:1em;
+    cursor: hand;
+    color: red;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+#startButton{
+    position: absolute;
+    z-index:304000;
+}
+
+.allZones{
+    position:absolute;
+    z-index:301000;
+}
+
+.overlayElement{
+    position:absolute;
+}
+.sceneText{
+    pointer-events: none;
+    z-index:301005;
+}
+/*
+.logoText{
+    float: left;
+    display: block;
+}
+
+.logoImage{
+    float: left;
+    display: block;
+}
+*/
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.overlayButton{
+    position:absolute;
+    cursor: -webkit-zoom-in;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    opacity: 0;
+}
+.zoomInButton{
+    position:absolute;
+    cursor: -webkit-zoom-in;
+    border: none;
+    fill: #00ff00;
+    stroke:"none";
+}
+
+.zoomOutButton{
+    z-index:303993;
+    position:absolute;
+    top: 0;
+    left: 0;
+    /*cursor: -webkit-zoom-out !important;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    */
+}
+
+.leaf{
+    position: absolute;
+    z-index:302000;
+    width: auto;
+    height: auto;
+    display: none;
+    pointer-events: none;
+}
+
+.overlay_scene3_zoomOut_button{
+    top: 106px;
+    left: 470px;
+    width:420px;
+    height: 420px;
+    z-index:300101;
+}
+
+/*  Zoom in buttons */
+.overlay_scene1_button{
+    top: 370px;
+    left: 460px;
+    width:170px;
+    z-index:300900;
+    height: 100px;
+}
+
+.overlay_scene2_button{
+    top: 380px;
+    left: 240px;
+    width:170px;
+    z-index:300899;
+    height: 100px;
+}
+.overlay_scene3_button{
+    top: 340px;
+    left: 180px;
+    width:100px;
+    z-index:300898;
+    height: 120px;
+}
+.overlay_scene3_button{
+    top: 330px;
+    left: 124px;
+    width:70px;
+    z-index:300901;
+    height: 60px;
+}
+.overlay_scene4_button{
+    top: 250px;
+    left: 110px;
+    width:150px;
+    z-index:300006;
+    height: 90px;
+}
+
+.overlay_back_button{
+    position:absolute;
+    z-index:306001;
+    cursor: -webkit-zoom-out !important;
+    top: 0px;
+    left:0px;
+}
+
+.pointerInfoIconContainer{
+    z-index:302009;
+    position: absolute;
+    pointer-events: none;
+    top: 0px;
+    left:0px;
+    display: none;
+}
+.pointerInfoContent{
+    /*
+    width: auto;
+    */
+    display: block;
+    text-align: center;
+    font-family: Calibri;
+    font-size: 1.5em;
+    color: #003300;
+    margin: auto;
+}
+
+.frameContainer{
+    position: absolute;
+    pointer-events: none;
+    z-index:303999;
+    border: dashed red;
+    top:0px;
+    left:0px;
+}
+
+.zonesFrameContainer{
+    border: dashed blue !important;
+}
+
+
+
+.backButton{
+    background-color: blue;
+    display: inline-block;
+    float: left;
+    padding: 4px;
+    margin: 10px;
+    cursor: hand;
+}
+
+/* player settings */
+.vjs-control-bar {
+    display: none !important;
+}
+.vjs-tech {
+    pointer-events: none;
+}
+.vjs-big-play-button{
+    display: none !important;
+}
+.pk_video {
+    background-color: #bcdeaf !important;
+}
+
+svg {
+    pointer-events: visibleFill;
+}
+
+#sceneTextContainer{
+    pointer-events: none;
+    position: absolute;
+    z-index:303999;
+    top:0px;
+    left:0px;
+}
+.sceneTextHeader{
+    pointer-events: none;
+    font-family: David;
+    font-style: italic;
+    color: #002f15;
+}
+.sceneTextContent{
+    pointer-events: none;
+    font-family: Calibri;
+    color: #003300;
+
+}
+#nutriliteLogo{
+    width: 100px;
+    height: auto;
+}
+
+.sceneTextContent{
+    margin-top: -30px;
+}
+
+.hoverZoneImage{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+}
+
+.hoversContainer{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+#stopButton{
+    position: absolute;
+    z-index:306999;
+    top:0px;
+    left:0px;
+}

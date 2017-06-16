@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile svg transparency testing</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/js/lib/video/video.js/video.js/dist/video-js.min.css" rel="stylesheet">
+    <script src="/js/lib/video/video.js/video.js/dist/ie8/videojs-ie8.min.js"></script>
+    <script src="/js/lib/video/video.js/video.js/dist/video.min.js"></script>
+    <script src="/js/lib/jquery-3.1.0.js"></script>
+</head>
+<body>
+
+<div id="startButton"><img src="assets/StartButton.jpg"></div>
+
+<video id="player"
+       class="video-js vjs-default-skin"
+       controls preload="auto"
+       width="960"
+       height="540">
+    <source src="assets/HD.mp4" type="video/mp4" />
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+
+<div style="width: 600px; height: 400px; position: absolute; z-index: 9; background-color: yellow;"></div>
+<div style="position: absolute; z-index: 100;">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="400px" height="300px" viewBox="0 0 400 300" enable-background="new 0 0 400 300" xml:space="preserve">
+    <path fill-opacity="0.4" fill="#CCCCCC" d="M 146.755,13.939 20.735,181.796 206.449,288.429
+        319.714,159.857 z"></path>
+</svg>
+</div>
+
+<div style="position: absolute; z-index: 101;">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="600px" height="400px" viewBox="0 0 600 400" enable-background="new 0 0 600 400" xml:space="preserve">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="600px" height="400px" viewBox="0 0 600 400" enable-background="new 0 0 600 400" xml:space="preserve">
+    <path fill-opacity="0.8" fill="#CCCCCC" d="M 398.048,101.245 398.048,190.36 505.53,190.36
+        489.885,101.245 z"></path>
+</svg>
+</svg>
+</div>
+</body>
+<script src="/js/MobileTesting.js"></script>
+<script src="/js/PontsToPathConverter.js"></script>
+</html>

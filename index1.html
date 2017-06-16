@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple video testing</title>
+
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/js/lib/video/video.js/video.js/dist/video-js.min.css" rel="stylesheet">
+    <script src="/js/lib/video/video.js/video.js/dist/ie8/videojs-ie8.min.js"></script>
+    <script src="/js/lib/video/video.js/video.js/dist/video.min.js"></script>
+    <script src="/js/lib/jquery-3.1.0.js"></script>
+</head>
+<body>
+
+<div class="sceneLeavesTop">
+    <div class="leafLeft" id="leafTopLeft"><img src="assets/upper_left_small.png"></div>
+    <div class="leafRight" id="leafTopRight"><img src="assets/upper_right_small.png"></div>
+</div>
+<div class="sceneLeavesBottom">
+    <div class="leafLeft" id="leafBottomLeft"><img src="assets/leaf_left.png"></div>
+    <div class="leafRight" id="leafBottomRight"><img src="assets/leaf_right.png"></div>
+</div>
+
+<div id="startButton"><img src="assets/StartButton.jpg"></div>
+
+<video id="player"
+       class="video-js vjs-default-skin"
+       controls preload="auto"
+       poster="assets/StartButton.jpg"
+       width="960"
+       height="540">
+    <source src="assets/HD.mp4" type="video/mp4" />
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+
+<div class="overlay_back_button" style="display: none;" id="backButton"><img src="assets/backButton.png"></div>
+
+<div id="sceneTextContainer" class="overlayElement sceneText noselect"></div>
+
+<div id="pointerInfoIconContainer" class="pointerInfoIconContainer">
+    <img src="assets/ponter_icon.png" class="pointerInfoContent">
+    <div class="pointerInfoContent">Выберите сектор</div>
+</div>
+
+<!-- BACK BUTTONS -->
+<div class="zoomOutButton" id="zoomOutButton1" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene1ZoomOutButton" class="SVGHoverablePath" data-scene="1" fill-opacity="0" fill="#CCCCCC" d="M 358,23 289,68 289,103 227,264 227,319 292.5,324 385,324
+	474,318 562,309 670,288 757,262 809,245 652,112 654,48 583,16 566,28 540,16 524,30 509,26 486,28 460,38 430,57 z"></path>
+</svg></div>
+
+<div class="zoomOutButton" id="zoomOutButton2" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene2Button" data-scene="2" class="SVGHoverablePath" fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0" fill="#CCCCCC" d="M 486,28 293,164 293,221 351,245 443,271 535,297 653,315
+	740,323 740,270 761,91 730,79 711,73 698,82 687,73 656,72 646,61 601,66 573,57 564,48 544,44 527,42 511,28 502,28 z"/>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton3" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+        <path id="scene3Button" data-scene="3" class="SVGHoverablePath" fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0" fill="#CCCCCC" d="M 718,40 423,81 423,132 459,201 513,270 584,325 642,361
+	700,388 897,199 872,186 868,165 825,156 824,143 804,145 761,107 742,84 772,84 770,55 727,54 z"/>
+    </svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton4" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene4Button" data-scene="4" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 914,194.633 914,143.633 645,88.633 633,101.633 620,97.633
+	620,110.633 612,114.633 612,122.633 612,132.633 601,129.633 601,141.633 592,146.633 592,154.633 587,163.633 587,174.633
+	580,176.633 580,186.633 583,185.633 576.5,202.133 571.5,219.133 568.5,235.133 565,265.965 569,357.965 574.334,384.633
+	585.667,415.965 769,381.965 804.334,324.633 876.334,315.633 867,285.299 878.334,252.299 889.667,226.632 905,205.299 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton5" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+ <path id="scene5Button" data-scene="5" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 567.667,376.333 865,390.333 867.667,410.333
+	886.334,358.333 904.334,331.667 941,294.333 867.667,246.333 869,207 737.667,207 675.667,187 638.334,223.667 609,261.667
+	585,308.333 572.334,349 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton6" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene6Button" data-scene="6" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 511.666,386.333 752.999,463.667 796.333,481.667
+	834.999,461 873.666,441 946.999,414.333 946.999,284.333 829.666,237 779.666,249.667 751.666,229.667 729.332,250.333
+	740.999,262.333 726.333,266.333 699.666,247.667 682.333,270 690.999,281 673.666,289 640.333,275.667 625.666,296.333
+	635.666,307 619.666,315 586.333,305.667 568.999,327.667 580.333,337.667 564.333,345.667 548.333,347 540.333,362.333
+	530.333,371.667 517.666,373 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton7" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene7Button" data-scene="7" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 245,483 245,535 322,520 423,509 514,509 601,521 660,535
+	734,402 734,382 728,342 653,327 654,277 615,270 613,259 565,252 564,262 540,263 532,278 531,316 512,317 510,305 451,270
+	411,295 406,279 393,270 378,270 366,281 353,278 342,287 338,303 324,313 299,314 283,325 263,326 261,283 232,284 232,331
+	207,335 202,293 171,300 171,341 150,340 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton8" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene8Button" data-scene="8" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 144,179 107,215 119,233 107,242 107,259 97,270 51,412
+	51,461 74,469 108,480 155,500 202,526 335,499 335,477 352,447 397,453 466,407 459,394 459,369 415,367 413,320 396,303 371,305
+	355,316 350,345 337,335 328,321 308,315 290,318 279,313 274,275 267,270 258.5,260 266,250 269,228 258.5,212 246,202 234,202
+	194,227 149,179 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton9" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene9Button" data-scene="9" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 34,260 34,314 53,336 70,367 79,397 79,418 73,433 357,502
+	366,528 374,505 381,457 381,400 381,349 375,333 420,335 420,302 366,302 357,279 356,203 232,103 220,112 212,141 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton10" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene10Button" data-scene="10" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 434.333,128.333 141.667,81.667 133.667,105 113,139
+	79.667,175.667 43,205 9.667,227.667 207,365 288.333,365 328.333,333 369.667,289.667 400.333,249.667 423.667,206.333
+	439.667,159.667 z"></path>
+</svg>
+</div>
+
+<div class="zoomOutButton" id="zoomOutButton11" style="display: none;" >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path id="scene11Button" data-scene="11" class="SVGHoverablePath" fill-opacity="0" fill="#CCCCCC" d="M 430.333,195 237.667,42.333 151.667,101.667 143.667,103.667
+	139,111 87,134.333 198.333,303 207.667,351 281,327.667 333,304.334 389.667,270 437,239 z"></path>
+</svg>
+</div>
+
+<div id="allZonesContainer" class="allZones">
+    <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<path class="zoomInButton" data-scene="1" d="M 527.611,386.846 494.302,369.994 460.989,391.549
+	460.989,515 489.598,515 527.611,515 564.453,511.865 599.333,506.77 641.269,498.148 680.459,487.957 708.285,478.161
+	635.78,383.318 602.469,367.642 593.454,372.736 581.697,367.642 573.467,373.912 564.061,371.952 555.049,373.128 543.29,377.831
+	z"></path>
+<path class="zoomInButton" data-scene="2" d="M 457.461,515 426.11,512.647 403.378,510.297 370.065,505.201
+	342.24,499.715 312.455,492.661 286.197,485.214 266.209,478.553 247.397,471.107 247.397,444.848 332.833,375.479 349.293,382.141
+	353.605,379.398 382.606,390.371 405.729,390.371 428.46,398.995 436.298,394.684 459.028,403.306 z"></path>
+<path class="zoomInButton" data-scene="3" d="M 330.874,374.108 245.242,443.672 245.242,470.125
+	207.814,451.51 173.13,428.781 149.42,409.576 128.844,386.062 116.303,367.446 107.485,348.046 263.465,327.08 268.561,333.35
+	275.615,340.013 284.825,348.046 296.974,356.668 312.258,364.507 z"></path>
+<path class="zoomInButton" data-scene="4" d="M 262.485,325.608 117.871,344.126 107.094,345.891
+	102.292,331.781 99.059,309.441 99.059,266.234 103.468,248.597 114.637,222.732 124.631,206.859 133.743,196.572 262.485,223.32
+	262.485,246.541 254.549,258.298 249.847,268.879 245.732,277.404 243.968,287.984 246.613,297.392 250.141,305.326 256.901,318.26
+	z"></path>
+<path class="zoomInButton" data-scene="5" d="M 135.311,194.81 141.973,187.364 151.575,178.153
+	160.981,169.923 275.026,208.918 275.026,234 264.445,245.17 263.662,221.263 z"></path>
+<path class="zoomInButton" data-scene="6" d="M 162.941,168.16 176.462,157.97 189.59,149.348
+	202.72,141.509 217.417,133.671 238.188,124.07 252.884,117.799 272.872,109.961 301.285,100.555 315.394,97.224 362.619,161.888
+	362.619,186.775 347.727,191.282 333.617,196.572 318.137,204.607 306.184,211.074 294.623,218.52 283.454,227.339 276.791,232.825
+	276.987,207.546 z"></path>
+<path class="zoomInButton" data-scene="7" d="M 366.244,186.186 378.589,181.875 401.223,176.585
+	429.733,172.176 467.357,168.942 506.744,169.236 541.429,171.881 577.288,178.349 578.169,153.363 601.685,84.877 581.403,81.938
+	581.403,57.541 562.885,55.778 561.122,49.9 537.901,46.666 537.901,51.368 527.024,51.368 522.323,56.954 522.323,77.235
+	512.328,76.354 512.328,70.181 483.818,56.954 481.172,56.954 455.6,71.65 455.6,75.471 444.725,75.471 424.738,77.823
+	399.165,81.056 377.708,83.996 359.484,86.641 341.089,90.168 317.892,96.047 364.285,161.79 364.285,186.186 z"></path>
+<path class="zoomInButton" data-scene="8" d="M 579.934,153.657 603.448,85.171 619.614,87.229
+	624.611,76.354 628.726,72.238 622.259,63.42 641.071,46.666 663.117,68.124 682.811,57.836 689.276,57.541 697.505,64.302
+	700.739,72.532 700.739,78.705 696.037,82.82 698.094,86.347 699.271,91.638 703.68,93.108 705.148,111.332 710.439,113.095
+	716.906,112.213 724.843,113.683 731.896,118.385 733.954,122.795 739.833,126.028 741.597,112.213 746.007,107.804
+	753.941,106.041 761.584,107.216 768.933,110.743 770.696,121.619 770.696,136.903 794.799,155.127 695.156,206.565
+	695.449,231.551 678.4,218.911 656.943,205.684 633.723,195.102 610.208,186.186 588.752,180.994 579.934,178.349 z"></path>
+<path class="zoomInButton" data-scene="9" d="M 697.115,233.215 697.115,208.329 796.27,158.164
+	796.27,146.799 799.991,144.448 804.499,144.448 808.026,148.955 861.72,191.673 860.737,228.121 866.813,239.683 893.267,239.683
+	893.267,254.379 872.299,254.379 874.26,267.508 874.848,291.022 872.889,323.943 869.752,337.855 729.449,292.004 725.726,273.583
+	717.299,256.731 707.697,244.385 z"></path>
+<path class="zoomInButton" data-scene="10" d="M 838.888,369.698 714.849,321.787 720.728,312.969
+	726.019,302.389 728.958,293.865 861.814,337.855 869.458,340.012 865.048,352.651 859.17,365.584 852.409,376.166 z"></path>
+<path class="zoomInButton" data-scene="11" d="M 636.074,377.929 653.71,369.698 671.641,359.705
+	691.041,346.478 703.387,335.015 714.849,323.257 838.302,371.462 851.821,377.929 842.121,391.155 830.658,404.09 817.431,415.846
+	805.381,426.133 792.153,435.833 774.517,447.003 758.938,456.115 743.947,463.464 731.015,469.342 710.439,477.572 z"></path>
+</svg>
+</div>
+
+<textarea type="text" id="logView" style="width: 200px; height: 100px; z-index:305000; position: absolute;"></textarea>
+
+</body>
+
+<script src="/js/div0/collections/Map.js"></script>
+<script src="/js/div0/collections/List.js"></script>
+<script src="/js/div0/collections/iterators/MapIterator.js"></script>
+<script src="/js/div0/collections/iterators/ListIterator.js"></script>
+<script src="/js/div0/events/EventBus.js"></script>
+
+<script src="/js/div0/TimeRange.js"></script>
+<script src="/js/div0/Scene.js"></script>
+<script src="/js/div0/IntroScene.js"></script>
+<script src="/js/div0/Player.js"></script>
+<script src="/js/div0/PathHoverListener.js"></script>
+<script src="/js/div0/ZoomOutButtonClickListener.js"></script>
+<script src="/js/div0/ShowZoomOutButton.js"></script>
+<script src="/js/div0/HideZoomOutButton.js"></script>
+<script src="/js/div0/SceneText.js"></script>
+<script src="/js/div0/SceneTextCollection.js"></script>
+<script src="/js/div0/SceneLeavesCollection.js"></script>
+
+<script src="/js/div0/Application.js"></script>
+<script src="/js/div0/Zones1.js"></script>
+<script src="/js/appInit1.js"></script>
+<script src="/js/PontsToPathConverter.js"></script>
+</html>
