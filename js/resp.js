@@ -7,8 +7,8 @@ $( document ).ready(function($)
 
     var borderWeight = 2;
 
-    var zonesWidth;
-    var zonesHeight;
+    //var zonesWidth;
+    //var zonesHeight;
     
     vid.addEventListener( "loadedmetadata", onMetadataLoaded, false );
 
@@ -25,25 +25,36 @@ $( document ).ready(function($)
         var offsetHeight = vid.offsetHeight;
         actualDimensions = VideoDimensions.getDimensions(vid);
         var documentWidth = $( document ).width();
-        
+
         //var leftOffset = parseInt((documentWidth - actualDimensions.width)/2);
         //var topOffset = parseInt((offsetHeight - actualDimensions.height)/2);
 
         var leftOffset = (documentWidth - actualDimensions.width)/2;
         var topOffset = (offsetHeight - actualDimensions.height)/2;
 
-        actualDimensions.left = leftOffset + 50;
-        actualDimensions.top = topOffset;
-
         console.log("actualDimensions width: "+actualDimensions.width+"  height:"+actualDimensions.height+"  videoRatio: "+actualDimensions.vidRatio);
-        console.log("left: ",actualDimensions.left, "top", actualDimensions.top);
-        zonesWidth = actualDimensions.width;
 
-        $("#allZonesContainer").css({top: topOffset, left: leftOffset, width: zonesWidth, height: zonesHeight});
+        actualDimensions.left = leftOffset + leftOffset/100*1;
+
+        if(topOffset == 0){
+            console.log("is ZERO ");
+            actualDimensions.top = actualDimensions.height/100*0.6;
+        }
+        else{
+            actualDimensions.top = topOffset + topOffset/100*2;
+        }
+
+        //actualDimensions.width = actualDimensions.width - actualDimensions.width/100*1;
+        //actualDimensions.width = actualDimensions.width - actualDimensions.width/100*1;
+
+
+        console.log("left: ",actualDimensions.left, "top", actualDimensions.top);
+
+        $("#allZonesContainer").css({top: actualDimensions.top, left: actualDimensions.left, width: actualDimensions.width, height: actualDimensions.height});
 
         $(".zoomOutButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width, height: actualDimensions.height});
         $("#startButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width - 3, height: actualDimensions.height - 3});
-        drawFrame(leftOffset, topOffset);
+        //drawFrame(leftOffset, topOffset);
     }
 
     function drawFrame(leftOffset, topOffset){
@@ -56,7 +67,7 @@ $( document ).ready(function($)
 
     function onEnterFullscreen() {
         //console.log("on enter fullscreen");
-        //onResize();
+        onResize();
         $("#allZonesContainer").css("z-index", 2147483647);
         $(".zoomOutButton").css("z-index", 2147483647);
         $("#startButton").css("z-index", 2147483647);
