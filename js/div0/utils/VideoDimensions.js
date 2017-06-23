@@ -12,13 +12,7 @@ var VideoDimensions = (function(){
             if(elementRatio > videoRatio) width = height * videoRatio;
             // It must be tall and thin, or exactly equal to the original ratio
             else height = width / videoRatio;
-            /*
-            return {
-                width: parseInt(width),
-                height: parseInt(height),
-                vidRatio:videoRatio
-            };
-            */
+            
             return {
                 width: width,
                 height: height,

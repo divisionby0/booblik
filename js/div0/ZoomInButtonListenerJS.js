@@ -11,7 +11,8 @@ var ZoomInButtonListenerJS = function(){
 
     var animationSpeed = 100;
     var hoverStyle = {
-        fill: "#00ff00"
+        fill: "#00ff00",
+        opacity:"0.4"
     };
 
     var HOVER_ENABLED = "HOVER ENABLED";
@@ -52,7 +53,9 @@ var ZoomInButtonListenerJS = function(){
             var zoomInButton = $(this);
             zoomInButton.attr(style);
             zoomInButton.click(function(){
+                $(this).animate(style, animationSpeed);
                 EventBus.dispatchEvent("SCENE_BUTTON_CLICKED", $(this).data("scene"));
+
             });
         });
     }

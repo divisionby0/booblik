@@ -56,8 +56,8 @@ class Application{
         
         EventBus.addEventListener("ZOOM_OUT_CLICKED", ()=>this.onZoomOutClicked());
         EventBus.addEventListener("SCENE_BUTTON_CLICKED", (scene)=>this.onSceneButtonClicked(scene));
-        EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OVER", (sceneId)=>this.onZoomInButtonMouseOver(sceneId));
-        EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OUT", ()=>this.onZoomInButtonMouseOut());
+        //EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OVER", (sceneId)=>this.onZoomInButtonMouseOver(sceneId));
+        //EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OUT", ()=>this.onZoomInButtonMouseOut());
         EventBus.addEventListener("CHANGE_PLAYER_SOURCES", (sources)=>this.changePlayerSourcesHandler(sources));
         EventBus.addEventListener("ON_RESIZE", (dimensions)=>this.onResize(dimensions));
     }
@@ -67,6 +67,22 @@ class Application{
     }
     
     private createScenes():void {
+
+        this.scenes = new Map<Scene>('scenes');
+        this.scenes.add("intro", new IntroScene("intro", 0, 0, 6.03, 6.03));
+        this.scenes.add("1", new Scene("1", 6.14, 7.8, 13.26, 14.50));
+        this.scenes.add("2", new Scene("2", 15.16, 16.26, 21.49, 22.56));
+        this.scenes.add("3", new Scene("3", 23.49, 24.69, 30.22, 31.32));
+        this.scenes.add("4", new Scene("4", 31.59, 33.00, 38.60, 39.70));
+        this.scenes.add("5", new Scene("5", 40.19, 41.00, 47.00, 47.80));
+        this.scenes.add("6", new Scene("6", 48.4, 49.40, 55.10, 56.30));
+        this.scenes.add("7", new Scene("7", 56.7, 57.90, 63.60, 64.60));
+        this.scenes.add("8", new Scene("8", 65.1, 66.0, 72.1, 73.0));
+        this.scenes.add("9", new Scene("9", 73.4, 74.3, 80.4, 81.4));
+        this.scenes.add("10", new Scene("10", 81.7, 82.8, 88.6, 89.8));
+        this.scenes.add("11", new Scene("11", 90.2, 91.3, 97.0, 98.2));
+
+        /*
         this.scenes = new Map<Scene>('scenes');
         this.scenes.add("intro", new IntroScene("intro", 0, 0, 6.03, 6.03));
         this.scenes.add("zone_1_hover", new Scene("zone_1_hover", 6.53, 6.53, 12.23, 12.23));
@@ -93,6 +109,7 @@ class Application{
         this.scenes.add("10", new Scene("10", 150.5, 151.5, 157.2, 158.4));
 
         this.scenes.add("11", new Scene("11", 158.8, 159.8, 165.8, 166.8));
+        */
     }
 
     private playerCallback = (data:any) => { // <-- note syntax here

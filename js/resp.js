@@ -25,30 +25,21 @@ $( document ).ready(function($)
         var offsetHeight = vid.offsetHeight;
         actualDimensions = VideoDimensions.getDimensions(vid);
         var documentWidth = $( document ).width();
+        
         //var leftOffset = parseInt((documentWidth - actualDimensions.width)/2);
         //var topOffset = parseInt((offsetHeight - actualDimensions.height)/2);
+
         var leftOffset = (documentWidth - actualDimensions.width)/2;
         var topOffset = (offsetHeight - actualDimensions.height)/2;
 
-        actualDimensions.left = leftOffset;
+        actualDimensions.left = leftOffset + 50;
         actualDimensions.top = topOffset;
 
         console.log("actualDimensions width: "+actualDimensions.width+"  height:"+actualDimensions.height+"  videoRatio: "+actualDimensions.vidRatio);
-
-        //zonesWidth = actualDimensions.width;
-        //zonesHeight = zonesWidth/1.777778;
+        console.log("left: ",actualDimensions.left, "top", actualDimensions.top);
         zonesWidth = actualDimensions.width;
-        //zonesHeight = zonesWidth/1.777778;
 
-        //$("#allZonesContainer").css({top: topOffset, left: leftOffset, width: actualDimensions.width, height: actualDimensions.height});
         $("#allZonesContainer").css({top: topOffset, left: leftOffset, width: zonesWidth, height: zonesHeight});
-        //$("#hoversContainer").css({top: topOffset, left: leftOffset, width: zonesWidth, height: zonesHeight});
-
-        //$("#allZonesContainer").css({top: topOffset, left: leftOffset});
-        //$("#allZonesContainer").width(actualDimensions.width);
-        //$("#allZonesContainer").height(actualDimensions.height);
-        //$("#allZonesContainer").css({top: topOffset, left: leftOffset, width: actualDimensions.width, height: actualDimensions.height});
-        //$("#allZonesContainer").css({top: 0, left: 0, width: actualDimensions.width, height: actualDimensions.height});
 
         $(".zoomOutButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width, height: actualDimensions.height});
         $("#startButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width - 3, height: actualDimensions.height - 3});

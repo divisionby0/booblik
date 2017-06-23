@@ -52,8 +52,8 @@ var Application = (function () {
         new ZoomOutButtonClickListener();
         EventBus.addEventListener("ZOOM_OUT_CLICKED", function () { return _this.onZoomOutClicked(); });
         EventBus.addEventListener("SCENE_BUTTON_CLICKED", function (scene) { return _this.onSceneButtonClicked(scene); });
-        EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OVER", function (sceneId) { return _this.onZoomInButtonMouseOver(sceneId); });
-        EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OUT", function () { return _this.onZoomInButtonMouseOut(); });
+        //EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OVER", (sceneId)=>this.onZoomInButtonMouseOver(sceneId));
+        //EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OUT", ()=>this.onZoomInButtonMouseOut());
         EventBus.addEventListener("CHANGE_PLAYER_SOURCES", function (sources) { return _this.changePlayerSourcesHandler(sources); });
         EventBus.addEventListener("ON_RESIZE", function (dimensions) { return _this.onResize(dimensions); });
     }
@@ -62,6 +62,20 @@ var Application = (function () {
     };
     Application.prototype.createScenes = function () {
         this.scenes = new Map('scenes');
+        this.scenes.add("intro", new IntroScene("intro", 0, 0, 6.03, 6.03));
+        this.scenes.add("1", new Scene("1", 6.14, 7.8, 13.26, 14.50));
+        this.scenes.add("2", new Scene("2", 15.16, 16.26, 21.49, 22.56));
+        this.scenes.add("3", new Scene("3", 23.49, 24.69, 30.22, 31.32));
+        this.scenes.add("4", new Scene("4", 31.59, 33.00, 38.60, 39.70));
+        this.scenes.add("5", new Scene("5", 40.19, 41.00, 47.00, 47.80));
+        this.scenes.add("6", new Scene("6", 48.4, 49.40, 55.10, 56.30));
+        this.scenes.add("7", new Scene("7", 56.7, 57.90, 63.60, 64.60));
+        this.scenes.add("8", new Scene("8", 65.1, 66.0, 72.1, 73.0));
+        this.scenes.add("9", new Scene("9", 73.4, 74.3, 80.4, 81.4));
+        this.scenes.add("10", new Scene("10", 81.7, 82.8, 88.6, 89.8));
+        this.scenes.add("11", new Scene("11", 90.2, 91.3, 97.0, 98.2));
+        /*
+        this.scenes = new Map<Scene>('scenes');
         this.scenes.add("intro", new IntroScene("intro", 0, 0, 6.03, 6.03));
         this.scenes.add("zone_1_hover", new Scene("zone_1_hover", 6.53, 6.53, 12.23, 12.23));
         this.scenes.add("zone_2_hover", new Scene("zone_2_hover", 13.23, 13.23, 18.23, 18.23));
@@ -74,6 +88,7 @@ var Application = (function () {
         this.scenes.add("zone_9_hover", new Scene("zone_9_hover", 56.33, 56.33, 61.43, 61.43));
         this.scenes.add("zone_10_hover", new Scene("zone_10_hover", 62.53, 62.53, 68.23, 68.23));
         this.scenes.add("zone_11_hover", new Scene("zone_11_hover", 69.03, 69.03, 74.43, 74.43));
+        
         this.scenes.add("1", new Scene("1", 75.43, 76.8, 82.26, 83.4));
         this.scenes.add("2", new Scene("2", 83.7, 85.3, 90.8, 91.6));
         this.scenes.add("3", new Scene("3", 92.1, 93.4, 99.12, 100.12));
@@ -84,7 +99,9 @@ var Application = (function () {
         this.scenes.add("8", new Scene("8", 133.7, 134.9, 140.8, 141.6));
         this.scenes.add("9", new Scene("9", 142.3, 143.2, 149, 150.3));
         this.scenes.add("10", new Scene("10", 150.5, 151.5, 157.2, 158.4));
+
         this.scenes.add("11", new Scene("11", 158.8, 159.8, 165.8, 166.8));
+        */
     };
     Application.prototype.startScene = function () {
         var range = this.scenes.get(this.currentScene.getId()).getRange();
