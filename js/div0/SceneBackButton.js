@@ -5,8 +5,8 @@ var SceneBackButton = (function () {
         var _this = this;
         this.coefficient = 1;
         this.baseWidth = 960;
-        this.baseImageWidth = 32;
-        this.baseImageHeight = 32;
+        this.baseImageWidth = 64;
+        this.baseImageHeight = 64;
         this.$j = jQuery.noConflict();
         EventBus.addEventListener("ON_RESIZE", function (dimensions) { return _this.onResize(dimensions); });
     }
@@ -15,7 +15,7 @@ var SceneBackButton = (function () {
         this.coefficient = dimensions.width / this.baseWidth;
         this.$j("#zoomOutMagnifierImage").width(this.baseImageWidth * this.coefficient);
         this.$j("#zoomOutMagnifierImage").height(this.baseImageHeight * this.coefficient);
-        this.$j(".overlay_back_button").css({ left: this.dimensions.left + this.$j("#zoomOutMagnifierImage").width() / 4, top: this.dimensions.top + this.dimensions.height - this.$j("#zoomOutMagnifierImage").height() - this.$j("#zoomOutMagnifierImage").height() / 6 });
+        this.$j(".overlay_back_button").css({ left: this.dimensions.left + this.dimensions.width - this.$j("#zoomOutMagnifierImage").width() - this.$j("#zoomOutMagnifierImage").width() / 6, top: this.dimensions.top + this.dimensions.height - this.$j("#zoomOutMagnifierImage").height() - this.$j("#zoomOutMagnifierImage").height() / 6 });
     };
     return SceneBackButton;
 }());

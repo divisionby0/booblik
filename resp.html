@@ -25,9 +25,9 @@
         <video id="player"
                class="video-js vjs-default-skin"
                controls preload="auto">
-            <source src="assets/video/HD_overlayed.mp4" type="video/mp4" />
-            <source src="assets/video/HD_overlayed.webm" type='video/webm' />
-            <source src="assets/video/HD_overlayed.ogv" type='video/ogg' />
+            <source src="assets/video/HD_overlayed.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <source src="assets/video/HD_overlayed.webm" type='video/webm; codecs="vp8, vorbis"' />
+            <source src="assets/video/HD_overlayed.ogv" type='video/ogg; codecs="theora, vorbis"' />
             <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
         </video>
     </div>
@@ -40,31 +40,149 @@
 
 <div id="allZonesContainer"  style="pointer-events: none; position: absolute; z-index: 20; border: 0;">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="allZonesSVG" style="border: 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
-<path class="zoomInButton" data-scene="1" d="M 637.667,402.001 696.667,462.334 697.125,489.875
+
+        <radialGradient id="SVGID_1_" cx="565" cy="453.667" r="114.9708" gradientTransform="matrix(-0.9998 0.0194 -0.0149 -0.768 1136.6438 791.1447)" gradientUnits="userSpaceOnUse">
+            <stop  offset="0" style="stop-color:#FFFFFF"/>
+            <stop  offset="0.1169" style="stop-color:#FEFBDC;stop-opacity:0.8878"/>
+            <stop  offset="0.2876" style="stop-color:#FDF7B1;stop-opacity:0.7239"/>
+            <stop  offset="0.454" style="stop-color:#FDF38D;stop-opacity:0.5642"/>
+            <stop  offset="0.6121" style="stop-color:#FDF16E;stop-opacity:0.4124"/>
+            <stop  offset="0.7599" style="stop-color:#FDF052;stop-opacity:0.2705"/>
+            <stop  offset="0.8933" style="stop-color:#FCEF3E;stop-opacity:0.1424"/>
+            <stop  offset="1" style="stop-color:#FCEF37;stop-opacity:0.04"/>
+        </radialGradient>
+
+       <radialGradient id="SVGID_2_" cx="361.6655" cy="454.751" r="99.812" fx="360.3038" fy="454.8079" gradientTransform="matrix(0.98 0.1989 -0.1438 0.7084 72.6174 60.6586)" gradientUnits="userSpaceOnUse">
+            <stop  offset="0" style="stop-color:#FFFFFF"/>
+            <stop  offset="0.0887" style="stop-color:#FFFDE3;stop-opacity:0.9113"/>
+            <stop  offset="0.2813" style="stop-color:#FFF9AF;stop-opacity:0.7187"/>
+            <stop  offset="0.4645" style="stop-color:#FFF683;stop-opacity:0.5355"/>
+            <stop  offset="0.6329" style="stop-color:#FFF457;stop-opacity:0.3671"/>
+            <stop  offset="0.7835" style="stop-color:#FFF32A;stop-opacity:0.2165"/>
+            <stop  offset="0.911" style="stop-color:#FFF200;stop-opacity:0.089"/>
+            <stop  offset="1" style="stop-color:#FFF200;stop-opacity:0"/>
+        </radialGradient>
+
+        <radialGradient id="SVGID_3_" cx="215.0005" cy="385.625" r="105.3538" gradientTransform="matrix(1 0 0 0.5859 0 159.6921)" gradientUnits="userSpaceOnUse">
+            <stop  offset="0.0949" style="stop-color:#FFFFFF"/>
+            <stop  offset="0.2759" style="stop-color:#F8F7CD;stop-opacity:0.798"/>
+            <stop  offset="0.4569" style="stop-color:#F4F2A2;stop-opacity:0.596"/>
+            <stop  offset="0.6248" style="stop-color:#F1EE80;stop-opacity:0.4086"/>
+            <stop  offset="0.775" style="stop-color:#EFEB63;stop-opacity:0.2409"/>
+            <stop  offset="0.9021" style="stop-color:#EEEA4F;stop-opacity:0.0991"/>
+            <stop  offset="0.9909" style="stop-color:#EDE947;stop-opacity:0"/>
+        </radialGradient>
+
+       <radialGradient id="SVGID_4_" cx="157.5" cy="294.5" r="93.7032" gradientTransform="matrix(0.9973 -0.0739 0.0589 0.7949 -16.9159 72.0282)" gradientUnits="userSpaceOnUse">
+            <stop  offset="0.0449" style="stop-color:#FFFFFF"/>
+            <stop  offset="0.1849" style="stop-color:#FDFAD8;stop-opacity:0.8117"/>
+            <stop  offset="0.3229" style="stop-color:#FCF7BA;stop-opacity:0.6262"/>
+            <stop  offset="0.4488" style="stop-color:#FCF5A3;stop-opacity:0.457"/>
+            <stop  offset="0.5586" style="stop-color:#FBF396;stop-opacity:0.3094"/>
+            <stop  offset="0.6399" style="stop-color:#FBF391;stop-opacity:0.2"/>
+            <stop  offset="0.8959" style="stop-color:#FAEE4E;stop-opacity:0"/>
+        </radialGradient>
+
+        <radialGradient id="SVGID_5_" cx="183.6655" cy="223.335" r="106.3257" gradientTransform="matrix(-0.9982 -0.0592 0.0204 -0.3443 362.4532 311.0894)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0.0425" style="stop-color:#EFF0AA"/>
+		<stop  offset="0.8219" style="stop-color:#FAF17A;stop-opacity:0"/>
+	</radialGradient>
+
+       <radialGradient id="SVGID_6_" cx="267.688" cy="153.2075" r="53.5399" gradientTransform="matrix(0.0688 0.9976 -1.856 0.128 533.6304 -133.4512)" gradientUnits="userSpaceOnUse">
+            <stop  offset="0.0453" style="stop-color:#FFFFFF"/>
+            <stop  offset="0.0569" style="stop-color:#FFFEF8;stop-opacity:0.9874"/>
+            <stop  offset="0.2068" style="stop-color:#FFFAC7;stop-opacity:0.8234"/>
+            <stop  offset="0.3544" style="stop-color:#FFF79A;stop-opacity:0.662"/>
+            <stop  offset="0.4961" style="stop-color:#FFF573;stop-opacity:0.5071"/>
+            <stop  offset="0.6306" style="stop-color:#FFF34A;stop-opacity:0.36"/>
+            <stop  offset="0.7562" style="stop-color:#FFF220;stop-opacity:0.2226"/>
+            <stop  offset="0.8695" style="stop-color:#FFF200;stop-opacity:0.0987"/>
+            <stop  offset="0.9598" style="stop-color:#FFF200;stop-opacity:0"/>
+        </radialGradient>
+
+        <radialGradient id="SVGID_7_" cx="466.125" cy="114.875" r="138.2157" gradientTransform="matrix(-0.9989 0.0458 -0.0237 -0.5171 934.4851 152.9176)" gradientUnits="userSpaceOnUse">
+            <stop  offset="0.076" style="stop-color:#FFFFFF"/>
+            <stop  offset="0.2135" style="stop-color:#FCF9D2;stop-opacity:0.8512"/>
+            <stop  offset="0.3604" style="stop-color:#FAF5A9;stop-opacity:0.6922"/>
+            <stop  offset="0.505" style="stop-color:#F9F187;stop-opacity:0.5357"/>
+            <stop  offset="0.644" style="stop-color:#F8EF69;stop-opacity:0.3853"/>
+            <stop  offset="0.7759" style="stop-color:#F7ED4E;stop-opacity:0.2425"/>
+            <stop  offset="0.8978" style="stop-color:#F7ED3C;stop-opacity:0.1106"/>
+            <stop  offset="1" style="stop-color:#F7EC35;stop-opacity:0"/>
+        </radialGradient>
+
+        <radialGradient id="SVGID_8_" cx="661.167" cy="132.541" r="100.7883" gradientTransform="matrix(-0.2208 -0.9753 1.1347 -0.2568 656.7341 811.4351)" gradientUnits="userSpaceOnUse">
+            <stop  offset="0.0486" style="stop-color:#FFFFFF"/>
+            <stop  offset="0.1268" style="stop-color:#FFFEF6;stop-opacity:0.901"/>
+            <stop  offset="0.2462" style="stop-color:#FEFCE6;stop-opacity:0.7498"/>
+            <stop  offset="0.3919" style="stop-color:#FEF9CC;stop-opacity:0.5655"/>
+            <stop  offset="0.5582" style="stop-color:#FDF5A6;stop-opacity:0.3548"/>
+            <stop  offset="0.7396" style="stop-color:#FCF174;stop-opacity:0.1252"/>
+            <stop  offset="0.8385" style="stop-color:#FCEF4C;stop-opacity:0"/>
+        </radialGradient>
+
+        <radialGradient id="SVGID_9_" cx="801.0625" cy="234.687" r="105.2493" gradientUnits="userSpaceOnUse">
+            <stop  offset="0.0738" style="stop-color:#FFFFFF"/>
+            <stop  offset="0.1433" style="stop-color:#FFFDE5;stop-opacity:0.91"/>
+            <stop  offset="0.3414" style="stop-color:#FFF8A8;stop-opacity:0.6532"/>
+            <stop  offset="0.5177" style="stop-color:#FFF574;stop-opacity:0.4247"/>
+            <stop  offset="0.6656" style="stop-color:#FFF33E;stop-opacity:0.233"/>
+            <stop  offset="0.7794" style="stop-color:#FFF200;stop-opacity:0.0855"/>
+            <stop  offset="0.8454" style="stop-color:#FFF200;stop-opacity:0"/>
+        </radialGradient>
+
+        <radialGradient id="SVGID_10_" cx="793.0938" cy="351.459" r="108.8305" gradientTransform="matrix(-0.9118 -0.4106 0.2198 -0.4881 1438.9807 848.6821)" gradientUnits="userSpaceOnUse">
+            <stop  offset="0.0753" style="stop-color:#FFFFFF"/>
+            <stop  offset="0.0854" style="stop-color:#FFFEFA;stop-opacity:0.9862"/>
+            <stop  offset="0.2719" style="stop-color:#FDF9CE;stop-opacity:0.7323"/>
+            <stop  offset="0.4441" style="stop-color:#FCF5AA;stop-opacity:0.4978"/>
+            <stop  offset="0.5967" style="stop-color:#FBF391;stop-opacity:0.2901"/>
+            <stop  offset="0.7237" style="stop-color:#FBF180;stop-opacity:0.1171"/>
+            <stop  offset="0.8098" style="stop-color:#FAF17A;stop-opacity:0"/>
+        </radialGradient>
+
+
+        <radialGradient id="SVGID_11_" cx="718.834" cy="408.5576" r="89.1098" gradientTransform="matrix(-0.9661 -0.258 0.1893 -0.7089 1335.9862 883.6556)" gradientUnits="userSpaceOnUse">
+            <stop  offset="0.0999" style="stop-color:#FFFFFF"/>
+            <stop  offset="0.1923" style="stop-color:#FEFBE1;stop-opacity:0.8973"/>
+            <stop  offset="0.3433" style="stop-color:#FCF7B9;stop-opacity:0.7296"/>
+            <stop  offset="0.4917" style="stop-color:#FBF397;stop-opacity:0.5647"/>
+            <stop  offset="0.6345" style="stop-color:#FBF17C;stop-opacity:0.4061"/>
+            <stop  offset="0.7699" style="stop-color:#FAF064;stop-opacity:0.2557"/>
+            <stop  offset="0.895" style="stop-color:#FAEF54;stop-opacity:0.1166"/>
+            <stop  offset="1" style="stop-color:#FAEE4E;stop-opacity:0"/>
+        </radialGradient>
+
+<path class="zoomInButton" data-scene="1" fill="url(#SVGID_1_)" d="M 637.667,402.001 696.667,462.334 697.125,489.875
 		680.667,494.334 655.625,501.625 623.375,509.75 597.781,513.906 569.875,517.875 550.251,519.834 528.376,521.043
 		508.501,521.672 490.334,522.001 451.793,520.917 452,493.001 456.333,439.334 450,434.001 448.333,427.334 450,419.334
 		458.333,414.001 458.333,394.667 493.667,371.334 527,389.667 551.334,375.334 559.334,374.334 567,374.667 573.334,376.001
-		583.334,369.667 593.334,375.001 602.667,369.667 636.667,385.667 	z"></path>
-<path class="zoomInButton" data-scene="2" d="M 456.666,405.668 450.666,400.001 445.999,400.001
+		583.334,369.667 593.334,375.001 602.667,369.667 636.667,385.667 	z">
+    <text transform="matrix(1 0 0 1 533.666 453.668)" fill="#39B54A" font-family="'MyriadPro-Regular'" font-size="12">увеличить</text>
+</path>
+<path class="zoomInButton" data-scene="2" fill="url(#SVGID_2_)" d="M 456.666,405.668 450.666,400.001 445.999,400.001
 		439.332,400.001 433.999,398.001 426.666,401.834 421.666,398.001 413.999,398.001 409.999,398.001 405.332,398.001
 		403.332,393.001 397.666,393.001 390.999,391.334 386.332,394.001 382.666,392.668 378.332,394.668 368.999,391.334
 		362.999,384.334 360.332,385.668 357.666,387.668 355.999,382.668 352.666,382.668 350.666,381.334 346.999,383.334
 		343.332,383.334 340.666,381.334 337.999,375.334 334.332,375.334 328.332,377.334 241.332,448.668 241.332,477.334
 		263.999,486.001 298.666,497.334 334.999,506.334 365.666,512.334 391.999,516.334 420.666,519.334 450.167,520.833
 		450.333,493.333 455.167,440 448.333,434.333 447,427.333 448.333,418.667 456.666,412.667 	z"></path>
-<path class="zoomInButton" data-scene="3" d="M 327,376.688 324.667,369.167 321.667,367.5 321.667,364.167
+
+<path class="zoomInButton" data-scene="3" fill="url(#SVGID_3_)" d="M 327,376.688 324.667,369.167 321.667,367.5 321.667,364.167
 		315.5,361.5 310.167,357.167 303.5,356.5 302.667,350 296.667,347.167 292,349.5 286,354 277.167,347.167 269.167,340 263,333.5
 		258.167,327.666 254.833,323.333 267.833,323.333 267.833,307 206.167,307 206.167,322.5 233.667,322.833 232.667,331.667
 		225.667,337.334 204.667,338 199.667,341.167 191.667,342.667 184.333,341.167 112.333,351.667 112.333,380 127.375,399.25
 		145.375,418.125 165.25,434.375 182.375,446.5 198.375,456 215.625,465.125 228.25,470.875 239.875,476.25 239.875,448.084 	z"></path>
-<path class="zoomInButton" data-scene="4" d="M 111,378.125 111,350.125 184.5,339.125 191.625,341.125
+
+<path class="zoomInButton" fill="url(#SVGID_4_)" data-scene="4" d="M 111,378.125 111,350.125 184.5,339.125 191.625,341.125
 		199.125,339.875 204,336.125 224.875,336.125 231.5,330.875 232.25,323.875 205,323.875 204.875,305.875 244.25,305.875
 		241,297.75 238.75,288 241.25,276.75 244.25,269 249,260.75 239,256.5 218.75,256.5 212.5,254.5 203.75,254.5 198.5,250.25
 		195.5,243.5 192.75,239 188,239 183.25,244.75 182,251 177,251 169.75,250.75 167.25,245.5 163.75,241 158.75,242.25 155.5,247.5
 		155,250.25 147,248.75 143.25,245.5 140,249 135.75,247.75 132.5,245.25 126.5,244.5 123,245.5 116,244.25 112.333,239
 		106.25,236.25 101.25,240.75 97.5,242 93.667,252.667 90.667,265.667 89.333,284.334 91.167,326.167 94.167,339.5 98.833,353.333
 		104.333,365.833 	z"></path>
-<path class="zoomInButton" data-scene="5" d="M 138.75,181.25 132,188.25 123.5,197 120.5,197 116.25,197
+
+<path class="zoomInButton" data-scene="5" fill="url(#SVGID_5_)" d="M 138.75,181.25 132,188.25 123.5,197 120.5,197 116.25,197
 		116.25,201 113.75,202.5 111.5,204.75 111.5,207.5 113.75,209.75 111.5,212.25 108.75,212.25 105.75,212.25 105.75,216.5
 		103.75,218.5 102.5,221 104,223.75 102.5,227 99.5,227 99.5,230 99.5,233.5 96.75,235 96.75,237.5 97.438,239.25 98.563,240.188
 		106.313,234.5 113,237.625 116.75,242.813 122.938,243.938 126.188,242.938 133.188,243.938 136.438,246.438 139.75,247.563
@@ -74,7 +192,8 @@
 		255.75,210.5 250.75,208.25 245,207.5 240.5,206.5 235.25,203.75 228.5,204.5 224,201.5 218,201.25 215,200 210.5,199.5
 		210.75,197.75 240.5,197.25 241.5,185.5 175,186.25 172,191 166.25,190.25 162.75,189 158.25,189.75 155.5,187.75 152.5,187.75
 		146,185.5 144.25,182.75 	z"></path>
-<path class="zoomInButton" data-scene="6" d="M267.083,210.75l15.667,13.583l16-10.917l16.583-9.083l13.917-6.5
+
+<path class="zoomInButton" data-scene="6" fill="url(#SVGID_6_)" d="M267.083,210.75l15.667,13.583l16-10.917l16.583-9.083l13.917-6.5
 		l19.667-7.917l5.583-1.5L354,162l-3.75-9.833L350,132.938h17.625V117.75l-20.708-0.417l-26-11.917L317,100.083l-1.833-7.583
 		L306,94.25l-19.833,5.667l-4.833-4L275.75,92L269,91.417l-3.833,3c0,0-2.667,3.417-2.75,3.667s-0.917,2.667-0.917,2.667l0.583,2.5
 		l3.083,2.583l-0.917,1.667l-2.75,0.25l-7.417-4.25l-3.333-2.083l-5.75-0.25l-3.5,2.417l-2.417,2.75l-1.917,3.417l0.583,2.917
@@ -84,7 +203,8 @@
 		l-4.833,4.167l-1.583-0.667l-2.833,0.25l-2.5,1.667l-1.583,2.833l-1.083,3l-14.5,12.5l5.167,1.417L147,184.5l5.417,1.75h3.333
 		l3,2.25l4.167-1l3.75,1.583l4.667,0.583l3.333-4.917l68.417-0.5l-1.333,14l-17.667,0.583l0.167,1.25l4.583,2.833l6.583-0.75
 		l6,2.833l9.667,1.667l5.5,2.5L267.083,210.75z"></path>
-<path class="zoomInButton" data-scene="7" d="M 355.667,162.167 355.667,188 375.667,181.833
+
+<path class="zoomInButton" data-scene="7" fill="url(#SVGID_7_)" d="M 355.667,162.167 355.667,188 375.667,181.833
 		401.667,175.083 422.833,172.833 441.667,170.667 467.167,169.5 494.625,169.375 516.75,170.25 539.875,172.25 564.75,176.125
 		564.75,148.875 568.375,146.875 575.75,145.875 582.375,139.5 581.5,135.625 577.75,133.375 576.875,131 588.188,121.344
 		588.169,118.75 562.334,118.75 562.375,101.75 596.625,101.625 615.75,83.5 604,81.25 595.375,79.625 583.625,78.375 583.5,53.625
@@ -96,7 +216,8 @@
 		363.25,78.75 361.875,70.5 359.75,65.125 356.25,62.375 351.375,62.625 346.375,66.625 345.25,70.375 345.25,76 344.625,83
 		342.5,82.75 338.25,81.25 334.375,83 330.467,83 327.563,83.25 323.188,84.188 318.125,88 316.5,91.688 318.25,99.688 322,104.563
 		337.5,111.25 347.313,115.875 369.125,115.875 369.313,134 369.375,134.75 351.438,134.688 351.875,152.375 	z"></path>
-<path class="zoomInButton" data-scene="8" d="M 597.25,102.875 564.5,103.625 564.5,116.375
+
+<path class="zoomInButton" data-scene="8" fill="url(#SVGID_8_)" d="M 597.25,102.875 564.5,103.625 564.5,116.375
 		590.375,116.375 589.875,121.25 579.25,131.25 582.375,134.125 583.75,139.625 576.875,147.25 567.25,149.375 566.375,176.375
 		588.5,180.5 609.875,186.625 631.25,194.5 649.5,202.125 667.25,210.5 683.75,222 694.75,230.5 694.75,203 757,164.5 757,153
 		724.75,152.5 724.5,134.25 776.5,132.75 776.5,111 773,104.75 767.25,102.875 758.5,101.25 753,102.75 747.5,105.75 744.5,109
@@ -104,7 +225,8 @@
 		709.5,107.75 709,89.75 705.25,87 702.25,82.5 702.5,79.75 704.5,75.5 705,70.25 702.25,62.75 699.167,58.167 694.833,54.667
 		690.75,53 686.083,53.833 666.917,65.417 644.333,40.75 643.333,39.917 621.25,59.75 621.916,61.5 628.5,69.667 625.166,73.417
 		624.166,79.417 620.833,84.083 616.917,84.333 	z"></path>
-<path class="zoomInButton" data-scene="9" d="M 732,294 759.5,300.5 765.5,303 771.5,298.5 780.5,303
+
+<path class="zoomInButton" data-scene="9" fill="url(#SVGID_9_)" d="M 732,294 759.5,300.5 765.5,303 771.5,298.5 780.5,303
 		786.5,307 805,312.5 828.5,323 873,327.5 873,351.5 878.5,336.5 880.333,322.75 881.833,304.5 881.833,272.666 880.833,263.333
 		879,256.166 900.666,256.166 900.666,238.666 873.833,238.666 872.833,235.333 870.833,232 869.167,227.833 870,225.333
 		868.833,222.666 868,211.833 871,210 871,207.333 869.5,205.167 869.166,194 868.666,189.167 865.167,186.5 862.5,186.5
@@ -114,13 +236,15 @@
 		813.5,145.625 812.25,143.625 810.125,142.25 806.5,142.25 803.75,142.25 801.125,143.125 799.5,140.875 798.375,135.208
 		726.583,135.75 726.625,151 758.875,151.75 758.75,164.75 696.125,204.625 696.125,232 703.5,238.75 709,244.125 714.5,251
 		719.875,258.625 724.25,266 729.5,276.25 731.5,284.75 732,290 	z"></path>
-<path class="zoomInButton" data-scene="10" d="M 731.834,296.334 729.501,304.001 725.001,312.501
+
+<path class="zoomInButton" data-scene="10" fill="url(#SVGID_10_)" d="M 731.834,296.334 729.501,304.001 725.001,312.501
 		718.167,323.834 712.001,331.667 705.167,338.667 716.167,343.834 716.334,338.667 722.001,338.501 726.501,340.667
 		729.25,343.834 730.5,347.75 735.5,349.75 744,354.25 746.75,357 752.5,360 755.5,363 755.5,373.5 789.75,373.5 789.75,381
 		789.75,386.75 787.25,392 787.75,396.25 808.75,406.5 808.75,433.25 821.75,422 834.5,410 846.25,397.25 857.25,382.5 865,369.667
 		871.25,356.25 871.688,328.938 828.063,324.625 804.438,314 785.75,308.688 779.563,304.25 771.813,300.25 765.688,304.875
 		758.938,302 	z"></path>
-<path class="zoomInButton" data-scene="11" d="M 704.001,339.666 697.667,345.166 689.501,351.5
+
+<path class="zoomInButton" data-scene="11" fill="url(#SVGID_11_)" d="M 704.001,339.666 697.667,345.166 689.501,351.5
 		679.001,359.333 670.167,364 664.001,367.5 660.334,367.5 658.167,369.667 656.001,372 646.167,377.5 633.167,382.166
 		638.668,385.166 639.168,401.5 641.001,403 698.501,461.833 698.813,489.448 736.667,474.166 752.001,466.666 766.334,459.333
 		787.167,447.833 797.667,440.5 807.167,434.166 807.167,407.625 786.375,397.125 785.625,391.75 788.428,386.25 788.428,374.875
@@ -143,6 +267,12 @@
     <img src="assets/hovers/zone9_hovered.png" class="hoverZoneImage">
     <img src="assets/hovers/zone10_hovered.png" class="hoverZoneImage">
     <img src="assets/hovers/zone11_hovered.png" class="hoverZoneImage">
+</div>
+-->
+
+<!--
+<div class="hoversContainer" id="hoversContainer">
+    <img src="assets/hovers/common/common_zone1.png" class="hoverZoneImage">
 </div>
 -->
 
@@ -242,7 +372,7 @@
 	139,111 87,134.333 198.333,303 207.667,351 281,327.667 333,304.334 389.667,270 437,239 z"></path>
 </svg>
 </div>
-<div class="overlay_back_button" style="display: none;" id="backButton"><img src="assets/zoomout_icon_small1.png" id="zoomOutMagnifierImage"></div>
+<div class="overlay_back_button" style="display: none;" id="backButton"><img src="assets/zoomout_icon_small2.png" id="zoomOutMagnifierImage"></div>
 <button id="stopButton" style="display: none;">STOP</button>
 
 <div id="frameContainer" class="frameContainer"></div>
@@ -269,7 +399,6 @@
 <script src="/js/div0/CommonScenePointerInfo.js"></script>
 <script src="/js/div0/SceneBackButton.js"></script>
 <script src="/js/div0/VideoSources.js"></script>
-<!--<script src="/js/div0/ZoomInButtonListener.js"></script>-->
 <script src="/js/div0/ZoomInButtonListenerJS.js"></script>
 <script src="/js/div0/StartButtonListener.js"></script>
 
@@ -277,4 +406,6 @@
 <script src="/js/resp.js"></script>
 <script src="/js/div0/FullscreenListener.js"></script>
 <script src="/js/appInit.js"></script>
+
+<script src="/js/PontsToPathConverter.js"></script>
 </html>

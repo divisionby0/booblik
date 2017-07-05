@@ -6,6 +6,6 @@ class ShowZoomOutButton{
     constructor(id:string){
         this.$j = jQuery.noConflict();
         
-        this.$j("#zoomOutButton"+id).show();
+        //this.$j("#zoomOutButton"+id).show();
     }
 }

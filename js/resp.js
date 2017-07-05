@@ -6,9 +6,6 @@ $( document ).ready(function($)
     var actualDimensions;
 
     var borderWeight = 2;
-
-    //var zonesWidth;
-    //var zonesHeight;
     
     vid.addEventListener( "loadedmetadata", onMetadataLoaded, false );
 
@@ -34,23 +31,13 @@ $( document ).ready(function($)
 
         console.log("actualDimensions width: "+actualDimensions.width+"  height:"+actualDimensions.height+"  videoRatio: "+actualDimensions.vidRatio);
 
-        actualDimensions.left = leftOffset + leftOffset/100*1;
-
-        if(topOffset == 0){
-            console.log("is ZERO ");
-            actualDimensions.top = actualDimensions.height/100*0.6;
-        }
-        else{
-            actualDimensions.top = topOffset + topOffset/100*2;
-        }
-
-        //actualDimensions.width = actualDimensions.width - actualDimensions.width/100*1;
-        //actualDimensions.width = actualDimensions.width - actualDimensions.width/100*1;
-
-
-        console.log("left: ",actualDimensions.left, "top", actualDimensions.top);
+        actualDimensions.top = topOffset;
+        actualDimensions.left = leftOffset;
+        
+        //console.log("left: ",actualDimensions.left, "top", actualDimensions.top);
 
         $("#allZonesContainer").css({top: actualDimensions.top, left: actualDimensions.left, width: actualDimensions.width, height: actualDimensions.height});
+        //$("#hoversContainer").css({top: actualDimensions.top, left: actualDimensions.left, width: actualDimensions.width, height: actualDimensions.height});
 
         $(".zoomOutButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width, height: actualDimensions.height});
         $("#startButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width - 3, height: actualDimensions.height - 3});
@@ -66,14 +53,14 @@ $( document ).ready(function($)
     }
 
     function onEnterFullscreen() {
-        //console.log("on enter fullscreen");
+        console.log("on enter fullscreen");
         onResize();
         $("#allZonesContainer").css("z-index", 2147483647);
         $(".zoomOutButton").css("z-index", 2147483647);
         $("#startButton").css("z-index", 2147483647);
         $("#pointerInfoIconContainer").css("z-index", 2147483647);
         $("#frameContainer").css("z-index", 2147483647);
-        //$("#hoversContainer").css("z-index", 2147483647);
+        $("#hoversContainer").css("z-index", 2147483647);
     }
 
     $( window ).resize(function() {

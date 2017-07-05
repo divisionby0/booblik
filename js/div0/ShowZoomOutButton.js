@@ -2,7 +2,7 @@
 var ShowZoomOutButton = (function () {
     function ShowZoomOutButton(id) {
         this.$j = jQuery.noConflict();
-        this.$j("#zoomOutButton" + id).show();
+        //this.$j("#zoomOutButton"+id).show();
     }
     return ShowZoomOutButton;
 }());

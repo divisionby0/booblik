@@ -5,8 +5,8 @@ class SceneBackButton{
     private coefficient:number = 1;
     private dimensions:any;
     private baseWidth:number = 960;
-    private baseImageWidth:number = 32;
-    private baseImageHeight:number = 32;
+    private baseImageWidth:number = 64;
+    private baseImageHeight:number = 64;
 
     constructor(){
         this.$j = jQuery.noConflict();
@@ -20,6 +20,6 @@ class SceneBackButton{
         this.$j("#zoomOutMagnifierImage").width(this.baseImageWidth*this.coefficient);
         this.$j("#zoomOutMagnifierImage").height(this.baseImageHeight*this.coefficient);
 
-        this.$j(".overlay_back_button").css({left:this.dimensions.left + this.$j("#zoomOutMagnifierImage").width()/4, top:this.dimensions.top + this.dimensions.height - this.$j("#zoomOutMagnifierImage").height() - this.$j("#zoomOutMagnifierImage").height()/6});
+        this.$j(".overlay_back_button").css({left:this.dimensions.left + this.dimensions.width - this.$j("#zoomOutMagnifierImage").width()- this.$j("#zoomOutMagnifierImage").width()/6, top:this.dimensions.top + this.dimensions.height - this.$j("#zoomOutMagnifierImage").height() - this.$j("#zoomOutMagnifierImage").height()/6});
     }
 }

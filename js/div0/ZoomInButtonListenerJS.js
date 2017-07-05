@@ -3,7 +3,6 @@ var ZoomInButtonListenerJS = function(){
     var $ = jQuery.noConflict();
 
     var style = {
-        fill: "#ddd",
         stroke:"none",
         opacity:"0",
         cursor: "-webkit-zoom-in"
@@ -11,8 +10,7 @@ var ZoomInButtonListenerJS = function(){
 
     var animationSpeed = 100;
     var hoverStyle = {
-        fill: "#00ff00",
-        opacity:"0.4"
+        opacity:"0.7"
     };
 
     var HOVER_ENABLED = "HOVER ENABLED";
