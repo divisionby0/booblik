@@ -169,16 +169,16 @@ video {
     position:absolute;
     z-index:306001;
     cursor: -webkit-zoom-out !important;
-    top: 0px;
-    left:0px;
+    top: 0;
+    left:0;
 }
 
 .pointerInfoIconContainer{
     z-index:302009;
     position: absolute;
     pointer-events: none;
-    top: 0px;
-    left:0px;
+    top: 0;
+    left:0;
     display: none;
 }
 .pointerInfoContent{
@@ -206,8 +206,6 @@ video {
     border: dashed blue !important;
 }
 
-
-
 .backButton{
     background-color: blue;
     display: inline-block;
@@ -218,17 +216,18 @@ video {
 }
 
 /* player settings */
-.vjs-control-bar {
-    display: none !important;
-}
 .vjs-tech {
     pointer-events: none;
 }
-.vjs-big-play-button{
-    display: none !important;
-}
 .pk_video {
     background-color: #bcdeaf !important;
+}
+
+.vjs-control-bar {
+    display: none !important;
+}
+.vjs-big-play-button{
+    display: none !important;
 }
 
 svg {

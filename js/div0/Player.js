@@ -52,9 +52,6 @@ var Player = (function () {
     };
     Player.prototype.goFullScreen = function () {
         this.$j('.vjs-fullscreen-control').click();
-        //EventBus.dispatchEvent("ON_ENTER_FULLSCREEN",null);
-        //this.$j("#player").css("z-index:20 !important;")
-        //console.log("");
     };
     Player.prototype.createListeners = function () {
         var _this = this;

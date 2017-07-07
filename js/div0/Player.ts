@@ -63,9 +63,6 @@ class Player{
     }
     public goFullScreen():void{
         this.$j('.vjs-fullscreen-control').click();
-        //EventBus.dispatchEvent("ON_ENTER_FULLSCREEN",null);
-        //this.$j("#player").css("z-index:20 !important;")
-        //console.log("");
     }
     
     private createListeners():void {

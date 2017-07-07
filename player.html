@@ -13,11 +13,20 @@
     <script src="/js/lib/jquery-3.1.0.js"></script>
 </head>
 <body>
+
+<!--
+<img class="leaf" id="leafTopLeft" src="assets/upper_left.png">
+<img class="leaf" id="leafTopRight" src="assets/upper_right.png">
+<img class="leaf" id="leafBottomLeft" src="assets/leaf_left.png">
+<img class="leaf" id="leafBottomRight" src="assets/leaf_right.png">
+-->
+
 <div class="wrapper" id="videoWrapper">
     <div class="videocontent">
         <video id="player"
                class="video-js vjs-default-skin"
                preload="auto"
+               controls
         poster="assets/StartButton3.jpg">
             <source src="assets/video/LOW_overlayed.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
             <source src="assets/video/LOW_overlayed.webm" type='video/webm; codecs="vp8, vorbis"' />
@@ -26,6 +35,12 @@
         </video>
     </div>
 </div>
+
+<div id="pointerInfoIconContainer" class="pointerInfoIconContainer">
+    <img src="assets/ponter_icon.png" class="pointerInfoContent" id="pointerInfoImage">
+    <div class="pointerInfoContent">Выберите сектор</div>
+</div>
+
 </body>
 
 <script src="/js/div0/collections/Map.js"></script>
@@ -34,6 +49,7 @@
 <script src="/js/div0/collections/iterators/ListIterator.js"></script>
 <script src="/js/div0/events/EventBus.js"></script>
 
+<script src="/js/div0/utils/VideoDimensions.js"></script>
 <script src="/js/div0/FullscreenListener.js"></script>
 <script src="/js/testingPlayer.js"></script>
 

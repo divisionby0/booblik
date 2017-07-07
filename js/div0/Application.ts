@@ -81,35 +81,6 @@ class Application{
         this.scenes.add("9", new Scene("9", 73.4, 74.3, 80.4, 81.4));
         this.scenes.add("10", new Scene("10", 81.7, 82.8, 88.6, 89.8));
         this.scenes.add("11", new Scene("11", 90.2, 91.3, 97.0, 98.2));
-
-        /*
-        this.scenes = new Map<Scene>('scenes');
-        this.scenes.add("intro", new IntroScene("intro", 0, 0, 6.03, 6.03));
-        this.scenes.add("zone_1_hover", new Scene("zone_1_hover", 6.53, 6.53, 12.23, 12.23));
-        this.scenes.add("zone_2_hover", new Scene("zone_2_hover", 13.23, 13.23, 18.23, 18.23));
-        this.scenes.add("zone_3_hover", new Scene("zone_3_hover", 19.43, 19.43, 25.23, 25.23));
-        this.scenes.add("zone_4_hover", new Scene("zone_4_hover", 26.43, 26.43, 31.43, 31.43));
-        this.scenes.add("zone_5_hover", new Scene("zone_5_hover", 32.43, 32.43, 38.23, 38.23));
-        this.scenes.add("zone_6_hover", new Scene("zone_6_hover", 39.03, 39.03, 44.23, 44.23));
-        this.scenes.add("zone_7_hover", new Scene("zone_7_hover", 45.03, 45.03, 50.43, 50.43));
-        this.scenes.add("zone_8_hover", new Scene("zone_8_hover", 51.43, 51.43, 55.43, 55.43));
-        this.scenes.add("zone_9_hover", new Scene("zone_9_hover", 56.33, 56.33, 61.43, 61.43));
-        this.scenes.add("zone_10_hover", new Scene("zone_10_hover", 62.53, 62.53, 68.23, 68.23));
-        this.scenes.add("zone_11_hover", new Scene("zone_11_hover", 69.03, 69.03, 74.43, 74.43));
-        
-        this.scenes.add("1", new Scene("1", 75.43, 76.8, 82.26, 83.4));
-        this.scenes.add("2", new Scene("2", 83.7, 85.3, 90.8, 91.6));
-        this.scenes.add("3", new Scene("3", 92.1, 93.4, 99.12, 100.12));
-        this.scenes.add("4", new Scene("4", 100.22, 101.42, 107.02, 108.3));
-        this.scenes.add("5", new Scene("5", 109, 109.9, 115.8, 116.74));
-        this.scenes.add("6", new Scene("6", 117, 118.1, 124, 125));
-        this.scenes.add("7", new Scene("7", 125.4, 126.6, 132.4, 133.4));
-        this.scenes.add("8", new Scene("8", 133.7, 134.9, 140.8, 141.6));
-        this.scenes.add("9", new Scene("9", 142.3, 143.2, 149, 150.3));
-        this.scenes.add("10", new Scene("10", 150.5, 151.5, 157.2, 158.4));
-
-        this.scenes.add("11", new Scene("11", 158.8, 159.8, 165.8, 166.8));
-        */
     }
 
     private playerCallback = (data:any) => { // <-- note syntax here
