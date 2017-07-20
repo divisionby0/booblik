@@ -14,11 +14,11 @@
 declare var StartButtonListener:any;
 declare var ZoomInButtonListenerJS:any;
 class Application{
-    private scenes:Map<Scene>;
+    protected scenes:Map<Scene>;
     private commonScenePointerInfo:CommonScenePointerInfo;
     private sceneBackButton:SceneBackButton;
     private videoPlayer:Player;
-    private videoSources:VideoSources;
+    protected videoSources:VideoSources;
     private currentScene:Scene;
     private zoomInButtonListenerJS:any;
 
@@ -36,14 +36,14 @@ class Application{
         this.$j = jQuery.noConflict();
         console.log("jQuery = ",this.$j);
 
-        this.videoSources = new VideoSources();
+        this.createVideoSources();
         this.commonScenePointerInfo = new CommonScenePointerInfo();
         this.sceneBackButton = new SceneBackButton();
         this.zoomInButtonListenerJS = new ZoomInButtonListenerJS();
 
         this.createScenes();
         this.createPlayer();
-        this.createScenes();
+        //this.createScenes();
 
         this.createControlsListener();
         this.zoomInButtonListenerJS.init();
@@ -66,8 +66,11 @@ class Application{
         this.videoPlayer = new Player(this.playerCallback);
     }
     
-    private createScenes():void {
-
+    protected createVideoSources():void{
+        this.videoSources = new VideoSources();
+    }
+    
+    protected createScenes():void {
         this.scenes = new Map<Scene>('scenes');
         this.scenes.add("intro", new IntroScene("intro", 0, 0, 6.03, 6.03));
         this.scenes.add("1", new Scene("1", 6.14, 7.8, 13.26, 14.50));

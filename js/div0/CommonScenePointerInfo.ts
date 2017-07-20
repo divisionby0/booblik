@@ -6,7 +6,8 @@ class CommonScenePointerInfo{
     private coefficient:number = 1;
     private dimensions:any;
     private baseWidth:number = 960;
-    private baseImageWidth:number = 45;
+    //private baseImageWidth:number = 45;
+    private baseImageWidth:number = 60;
     private baseImageHeight:number = 60;
 
     constructor(){
@@ -22,7 +23,9 @@ class CommonScenePointerInfo{
         this.$j("#pointerInfoImage").width(this.baseImageWidth*this.coefficient);
         this.$j("#pointerInfoImage").height(this.baseImageHeight*this.coefficient);
 
-        this.$j("#pointerInfoIconContainer").css({left:this.dimensions.left+this.dimensions.width - this.$j("#pointerInfoImage").width()*4.6, top:this.dimensions.top + this.dimensions.height - this.$j("#pointerInfoImage").height()*1.6});
+        //console.log("pointer bounds: ",this.$j("#pointerInfoImage").width(), this.$j("#pointerInfoImage").height());
+
+        this.$j("#pointerInfoIconContainer").css({left:this.dimensions.left+this.dimensions.width - this.$j("#pointerInfoImage").width()*3.6, top:this.dimensions.top + this.dimensions.height - this.$j("#pointerInfoImage").height()*1.6});
 
     }
 }

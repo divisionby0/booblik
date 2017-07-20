@@ -37,13 +37,13 @@ var Application = (function () {
         };
         this.$j = jQuery.noConflict();
         console.log("jQuery = ", this.$j);
-        this.videoSources = new VideoSources();
+        this.createVideoSources();
         this.commonScenePointerInfo = new CommonScenePointerInfo();
         this.sceneBackButton = new SceneBackButton();
         this.zoomInButtonListenerJS = new ZoomInButtonListenerJS();
         this.createScenes();
         this.createPlayer();
-        this.createScenes();
+        //this.createScenes();
         this.createControlsListener();
         this.zoomInButtonListenerJS.init();
         this.zoomInButtonListenerJS.create();
@@ -59,6 +59,9 @@ var Application = (function () {
     }
     Application.prototype.createPlayer = function () {
         this.videoPlayer = new Player(this.playerCallback);
+    };
+    Application.prototype.createVideoSources = function () {
+        this.videoSources = new VideoSources();
     };
     Application.prototype.createScenes = function () {
         this.scenes = new Map('scenes');

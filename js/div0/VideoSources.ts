@@ -2,7 +2,7 @@
 ///<reference path="events/EventBus.ts"/>
 class VideoSources{
 
-    private collection:Map<any[]>;
+    protected collection:Map<any[]>;
 
     private HIGH_QUALITY:string = "HQ";
     private MED_QUALITY:string = "MQ";
@@ -14,27 +14,30 @@ class VideoSources{
 
     constructor(){
         this.collection = new Map<any[]>("sources");
+        this.create();
+    }
 
+    protected create():void{
         this.collection.add("HQ", [
-            {type: "video/mp4", src: "assets/video/HD_overlayed.mp4"},
-            {type: "video/webm", src: "assets/video/HD_overlayed.webm"},
-            {type: "video/ogg", src: "assets/video/HD_overlayed.ogv"}
+            {type: "video/mp4", src: "assets/video/HD.mp4"},
+            {type: "video/webm", src: "assets/video/HD.webm"},
+            {type: "video/ogg", src: "assets/video/HD.ogv"}
         ]);
 
 
         this.collection.add("MQ", [
-            {type: "video/mp4", src: "assets/video/MED_overlayed.mp4"},
-            {type: "video/webm", src: "assets/video/MED_overlayed.webm"},
-            {type: "video/ogg", src: "assets/video/MED_overlayed.ogv"}
+            {type: "video/mp4", src: "assets/video/MED.mp4"},
+            {type: "video/webm", src: "assets/video/MED.webm"},
+            {type: "video/ogg", src: "assets/video/MED.ogv"}
         ]);
 
         this.collection.add("LQ", [
-            {type: "video/mp4", src: "assets/video/LOW_overlayed.mp4"},
-            {type: "video/webm", src: "assets/video/LOW_overlayed.webm"},
-            {type: "video/ogg", src: "assets/video/LOW_overlayed.ogv"}
+            {type: "video/mp4", src: "assets/video/LOW.mp4"},
+            {type: "video/webm", src: "assets/video/LOW.webm"},
+            {type: "video/ogg", src: "assets/video/LOW.ogv"}
         ]);
     }
-
+    
     /*
     public getSources(key:string):any[]{
         return this.collection.get(key);

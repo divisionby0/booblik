@@ -15,7 +15,7 @@ var SceneBackButton = (function () {
         this.coefficient = dimensions.width / this.baseWidth;
         this.$j("#zoomOutMagnifierImage").width(this.baseImageWidth * this.coefficient);
         this.$j("#zoomOutMagnifierImage").height(this.baseImageHeight * this.coefficient);
-        this.$j(".overlay_back_button").css({ left: this.dimensions.left + this.dimensions.width - this.$j("#zoomOutMagnifierImage").width() - this.$j("#zoomOutMagnifierImage").width() / 6, top: this.dimensions.top + this.dimensions.height - this.$j("#zoomOutMagnifierImage").height() - this.$j("#zoomOutMagnifierImage").height() / 6 });
+        this.$j(".overlay_back_button").css({ left: this.dimensions.left + this.dimensions.width - this.$j("#zoomOutMagnifierImage").width() - this.$j("#zoomOutMagnifierImage").width() / 14, top: this.dimensions.top + this.dimensions.height - this.$j("#zoomOutMagnifierImage").height() - this.$j("#zoomOutMagnifierImage").height() / 16 });
     };
     return SceneBackButton;
 }());

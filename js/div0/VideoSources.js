@@ -7,22 +7,25 @@ var VideoSources = (function () {
         this.LOW_QUALITY = "LQ";
         this.currentQuality = this.HIGH_QUALITY;
         this.collection = new Map("sources");
+        this.create();
+    }
+    VideoSources.prototype.create = function () {
         this.collection.add("HQ", [
-            { type: "video/mp4", src: "assets/video/HD_overlayed.mp4" },
-            { type: "video/webm", src: "assets/video/HD_overlayed.webm" },
-            { type: "video/ogg", src: "assets/video/HD_overlayed.ogv" }
+            { type: "video/mp4", src: "assets/video/HD.mp4" },
+            { type: "video/webm", src: "assets/video/HD.webm" },
+            { type: "video/ogg", src: "assets/video/HD.ogv" }
         ]);
         this.collection.add("MQ", [
-            { type: "video/mp4", src: "assets/video/MED_overlayed.mp4" },
-            { type: "video/webm", src: "assets/video/MED_overlayed.webm" },
-            { type: "video/ogg", src: "assets/video/MED_overlayed.ogv" }
+            { type: "video/mp4", src: "assets/video/MED.mp4" },
+            { type: "video/webm", src: "assets/video/MED.webm" },
+            { type: "video/ogg", src: "assets/video/MED.ogv" }
         ]);
         this.collection.add("LQ", [
-            { type: "video/mp4", src: "assets/video/LOW_overlayed.mp4" },
-            { type: "video/webm", src: "assets/video/LOW_overlayed.webm" },
-            { type: "video/ogg", src: "assets/video/LOW_overlayed.ogv" }
+            { type: "video/mp4", src: "assets/video/LOW.mp4" },
+            { type: "video/webm", src: "assets/video/LOW.webm" },
+            { type: "video/ogg", src: "assets/video/LOW.ogv" }
         ]);
-    }
+    };
     /*
     public getSources(key:string):any[]{
         return this.collection.get(key);

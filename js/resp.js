@@ -18,9 +18,11 @@ $( document ).ready(function($)
         EventBus.addEventListener("ON_ENTER_FULLSCREEN", onEnterFullscreen);
         //EventBus.addEventListener("ON_EXIT_FULLSCREEN", onExitFullscreen);
 
+        /*
         if(isMobile){
             startResizeInterval();
         }
+        */
     }
 
     function startResizeInterval(){
@@ -56,7 +58,6 @@ $( document ).ready(function($)
     }
 
     function onEnterFullscreen() {
-        console.log("on enter fullscreen");
         onResize();
         $("#allZonesContainer").css("z-index", 2147483647);
         $(".zoomOutButton").css("z-index", 2147483647);
