@@ -20,28 +20,36 @@
 
 <div id="startButton" style="display: none;"><img src="assets/StartButton3.jpg" style="width: 100%; height: auto;"></div>
 
+<!--
 <div class="wrapper" id="videoWrapper">
     <div class="videocontent">
         <video id="player"
                class="video-js vjs-default-skin"
                preload="auto">
-			<!--
-            <source src="assets/video/HD_overlayed.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-            <source src="assets/video/HD_overlayed.webm" type='video/webm; codecs="vp8, vorbis"' />
-            <source src="assets/video/HD_overlayed.ogv" type='video/ogg; codecs="theora, vorbis"' />
-            -->
-			<source src="assets/video/HD.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-			<source src="assets/video/HD.webm" type='video/webm; codecs="vp8, vorbis"' />
-			<source src="assets/video/HD.ogv" type='video/ogg; codecs="theora, vorbis"' />
+			<source src="assets/video/HD.mp4" type='video/mp4' />
+			<source src="assets/video/HD.webm" type='video/webm' />
+			<source src="assets/video/HD.ogv" type='video/ogg' />
             <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
         </video>
     </div>
 </div>
+-->
+
+
+<video id="player"
+	   class="video-js vjs-default-skin"
+	   preload="auto">
+	<source src="assets/video/HD.mp4" type='video/mp4' />
+	<source src="assets/video/HD.webm" type='video/webm' />
+	<source src="assets/video/HD.ogv" type='video/ogg' />
+	<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
 
 <div id="pointerInfoIconContainer" class="pointerInfoIconContainer">
     <img src="assets/ponter_icon_1.png" class="pointerInfoContent" id="pointerInfoImage">
     <div class="pointerInfoContent">Выберите сектор</div>
 </div>
+
 
 <div id="allZonesContainer"  style="pointer-events: none; position: absolute; z-index: 20; border: 0;">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="allZonesSVG" style="border: 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
@@ -218,6 +226,7 @@
 		717.688,339.666 717.375,346 	z"></path>
 </svg>
 </div>
+
 <div class="overlay_back_button" style="display: none;" id="backButton"><img src="assets/backButtonRed.png" id="zoomOutMagnifierImage"></div>
 <button id="stopButton" style="display: none;">STOP</button>
 
