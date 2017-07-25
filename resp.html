@@ -39,9 +39,9 @@
 <video id="player"
 	   class="video-js vjs-default-skin"
 	   preload="auto">
-	<source src="assets/video/withPointerInfo/HD.mp4" type='video/mp4' />
-	<source src="assets/video/withPointerInfo/HD.webm" type='video/webm' />
-	<source src="assets/video/withPointerInfo/HD.ogv" type='video/ogg' />
+	<source src="assets/video/withPointerInfo/LOW.mp4" type='video/mp4' />
+	<source src="assets/video/withPointerInfo/LOW.webm" type='video/webm' />
+	<source src="assets/video/withPointerInfo/LOW.ogv" type='video/ogg' />
 	<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 </video>
 
@@ -51,6 +51,12 @@
     <div class="pointerInfoContent">Выберите сектор</div>
 </div>
 -->
+
+<div id="logContainer">
+	<textarea name="logTextArea" id="logTextArea" cols="30" rows="10">
+
+	</textarea>
+</div>
 
 <div id="allZonesContainer">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="allZonesSVG" style="border: 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
@@ -258,6 +264,7 @@
 <script src="/js/div0/ZoomInButtonListenerJS.js"></script>
 <script src="/js/div0/StartButtonListener.js"></script>
 
+<script src="/js/div0/utils/Logger.js"></script>
 <script src="/js/div0/Application.js"></script>
 <script src="/js/resp.js"></script>
 <script src="/js/div0/FullscreenListener.js"></script>

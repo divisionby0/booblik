@@ -52,8 +52,6 @@ var Application = (function () {
         new ZoomOutButtonClickListener();
         EventBus.addEventListener("ZOOM_OUT_CLICKED", function () { return _this.onZoomOutClicked(); });
         EventBus.addEventListener("SCENE_BUTTON_CLICKED", function (scene) { return _this.onSceneButtonClicked(scene); });
-        //EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OVER", (sceneId)=>this.onZoomInButtonMouseOver(sceneId));
-        //EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OUT", ()=>this.onZoomInButtonMouseOut());
         EventBus.addEventListener("CHANGE_PLAYER_SOURCES", function (sources) { return _this.changePlayerSourcesHandler(sources); });
         EventBus.addEventListener("ON_RESIZE", function (dimensions) { return _this.onResize(dimensions); });
     }

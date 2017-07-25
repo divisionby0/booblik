@@ -8,48 +8,34 @@ $( document ).ready(function($)
     var isMobile = false;
     var resizeTimerInterval;
 
+    var version = "0.0.1";
+    log(version);
+
     vid.addEventListener( "loadedmetadata", onMetadataLoaded, false );
 
     function onMetadataLoaded(){
+        log("onMetadataLoaded");
         $("#startButton").show();
         isMobile = isMobileOrTablet();
+        log("isMobile="+isMobile);
+        log("isIOS="+isIOS());
         onResize();
         EventBus.dispatchEvent("ON_RESIZE", actualDimensions);
         EventBus.addEventListener("ON_ENTER_FULLSCREEN", onEnterFullscreen);
-        //EventBus.addEventListener("ON_EXIT_FULLSCREEN", onExitFullscreen);
-
-        /*
-        if(isMobile){
-            startResizeInterval();
-        }
-        */
     }
-
-    function startResizeInterval(){
-        if(!resizeTimerInterval){
-            alert("startResizeInterval");
-            resizeTimerInterval = setInterval(onResize, 1000);
-        }
-    }
-
 
     function onResize(){
         var offsetHeight = vid.offsetHeight;
         actualDimensions = VideoDimensions.getDimensions(vid);
         var documentWidth = $( document ).width();
 
-        //var leftOffset = parseInt((documentWidth - actualDimensions.width)/2);
-        //var topOffset = parseInt((offsetHeight - actualDimensions.height)/2);
-
         var leftOffset = (documentWidth - actualDimensions.width)/2;
         var topOffset = (offsetHeight - actualDimensions.height)/2;
 
-        console.log("actualDimensions width: "+actualDimensions.width+"  height:"+actualDimensions.height+"  videoRatio: "+actualDimensions.vidRatio);
+        log("actualDimensions width: "+actualDimensions.width+"  height:"+actualDimensions.height+"  videoRatio: "+actualDimensions.vidRatio);
 
         actualDimensions.top = topOffset;
         actualDimensions.left = leftOffset;
-        
-        //console.log("left: ",actualDimensions.left, "top", actualDimensions.top);
 
         if(isMobile){
             $("#allZonesContainer").css({top: actualDimensions.top, width: actualDimensions.width, height: actualDimensions.height});
@@ -67,7 +53,6 @@ $( document ).ready(function($)
 
         $(".zoomOutButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width, height: actualDimensions.height});
         $("#startButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width - 3, height: actualDimensions.height - 3});
-        //$("#pointerInfoIconContainer").css({left:actualDimensions.width - $("#pointerInfoImage").width()*3.6, top:actualDimensions.top + actualDimensions.height - $("#pointerInfoImage").height()*1.6});
     }
 
     function onEnterFullscreen() {
@@ -75,7 +60,7 @@ $( document ).ready(function($)
         $("#allZonesContainer").css("z-index", 2147483647);
         $(".zoomOutButton").css("z-index", 2147483647);
         $("#startButton").css("z-index", 2147483647);
-        $("#pointerInfoIconContainer").css("z-index", 2147483647);
+        //$("#pointerInfoIconContainer").css("z-index", 2147483647);
         $("#frameContainer").css("z-index", 2147483647);
         $("#hoversContainer").css("z-index", 2147483647);
     }
@@ -86,8 +71,20 @@ $( document ).ready(function($)
         return check;
     }
 
+    function isIOS(){
+        var check = false;
+        var check = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        return check;
+    }
+    
+    function log(message){
+        console.log(message);
+        EventBus.dispatchEvent("LOG_MESSAGE", message);
+        $("#logTextArea").append(message+"\n");
+    }
 
     $( window ).resize(function() {
+        log("onResize");
         onResize();
         EventBus.dispatchEvent("ON_RESIZE", actualDimensions);
     });

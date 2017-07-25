@@ -56,8 +56,6 @@ class Application{
         
         EventBus.addEventListener("ZOOM_OUT_CLICKED", ()=>this.onZoomOutClicked());
         EventBus.addEventListener("SCENE_BUTTON_CLICKED", (scene)=>this.onSceneButtonClicked(scene));
-        //EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OVER", (sceneId)=>this.onZoomInButtonMouseOver(sceneId));
-        //EventBus.addEventListener("ZOOM_IN_BUTTON_MOUSE_OUT", ()=>this.onZoomInButtonMouseOut());
         EventBus.addEventListener("CHANGE_PLAYER_SOURCES", (sources)=>this.changePlayerSourcesHandler(sources));
         EventBus.addEventListener("ON_RESIZE", (dimensions)=>this.onResize(dimensions));
     }

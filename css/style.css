@@ -214,6 +214,13 @@ video {
     left:0;
 }
 
+#logContainer{
+    position: absolute;
+    z-index: 30;
+    top:0;
+    left:0;
+}
+
 .zonesFrameContainer{
     border: dashed blue !important;
 }

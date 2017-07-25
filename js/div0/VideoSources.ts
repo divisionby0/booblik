@@ -18,6 +18,7 @@ class VideoSources{
     }
 
     protected create():void{
+        /*
         this.collection.add("HQ", [
             {type: "video/mp4", src: "assets/video/withPointerInfo/HD.mp4"},
             {type: "video/webm", src: "assets/video/withPointerInfo/HD.webm"},
@@ -31,6 +32,23 @@ class VideoSources{
             {type: "video/ogg", src: "assets/video/withPointerInfo/MED.ogv"}
         ]);
 
+        this.collection.add("LQ", [
+            {type: "video/mp4", src: "assets/video/withPointerInfo/LOW.mp4"},
+            {type: "video/webm", src: "assets/video/withPointerInfo/LOW.webm"},
+            {type: "video/ogg", src: "assets/video/withPointerInfo/LOW.ogv"}
+        ]);
+        */
+
+        this.collection.add("HQ", [
+            {type: "video/mp4", src: "assets/video/withPointerInfo/LOW.mp4"},
+            {type: "video/webm", src: "assets/video/withPointerInfo/LOW.webm"},
+            {type: "video/ogg", src: "assets/video/withPointerInfo/LOW.ogv"}
+        ]);
+        this.collection.add("MQ", [
+            {type: "video/mp4", src: "assets/video/withPointerInfo/LOW.mp4"},
+            {type: "video/webm", src: "assets/video/withPointerInfo/LOW.webm"},
+            {type: "video/ogg", src: "assets/video/withPointerInfo/LOW.ogv"}
+        ]);
         this.collection.add("LQ", [
             {type: "video/mp4", src: "assets/video/withPointerInfo/LOW.mp4"},
             {type: "video/webm", src: "assets/video/withPointerInfo/LOW.webm"},
