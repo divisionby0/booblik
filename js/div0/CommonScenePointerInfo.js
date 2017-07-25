@@ -19,7 +19,7 @@ var CommonScenePointerInfo = (function () {
         this.$j("#pointerInfoImage").width(this.baseImageWidth * this.coefficient);
         this.$j("#pointerInfoImage").height(this.baseImageHeight * this.coefficient);
         //console.log("pointer bounds: ",this.$j("#pointerInfoImage").width(), this.$j("#pointerInfoImage").height());
-        this.$j("#pointerInfoIconContainer").css({ left: this.dimensions.left + this.dimensions.width - this.$j("#pointerInfoImage").width() * 3.6, top: this.dimensions.top + this.dimensions.height - this.$j("#pointerInfoImage").height() * 1.6 });
+        //this.$j("#pointerInfoIconContainer").css({left:this.dimensions.left+this.dimensions.width - this.$j("#pointerInfoImage").width()*3.6, top:this.dimensions.top + this.dimensions.height - this.$j("#pointerInfoImage").height()*1.6});
     };
     return CommonScenePointerInfo;
 }());

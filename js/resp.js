@@ -51,12 +51,23 @@ $( document ).ready(function($)
         
         //console.log("left: ",actualDimensions.left, "top", actualDimensions.top);
 
+        if(isMobile){
+            $("#allZonesContainer").css({top: actualDimensions.top, width: actualDimensions.width, height: actualDimensions.height});
+            $("#pointerInfoIconContainer").css({left:actualDimensions.width - $("#pointerInfoImage").width()*3.6, top:actualDimensions.top + actualDimensions.height - $("#pointerInfoImage").height()*1.6});
+        }
+        else{
+            $("#allZonesContainer").css({top: actualDimensions.top, left: actualDimensions.left, width: actualDimensions.width, height: actualDimensions.height});
+            $("#pointerInfoIconContainer").css({left:actualDimensions.left+actualDimensions.width - $("#pointerInfoImage").width()*3.6, top:actualDimensions.top + actualDimensions.height - $("#pointerInfoImage").height()*1.6});
+        }
+
+        //$("#allZonesContainer").css({top: actualDimensions.top, width: actualDimensions.width, height: actualDimensions.height});
         //$("#allZonesContainer").css({top: actualDimensions.top, left: actualDimensions.left, width: actualDimensions.width, height: actualDimensions.height});
-        $("#allZonesContainer").css({top: actualDimensions.top, left: actualDimensions.left, width: actualDimensions.width, height: actualDimensions.height});
+
         $("#player").css({top: 0, left: 0});
 
         $(".zoomOutButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width, height: actualDimensions.height});
         $("#startButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width - 3, height: actualDimensions.height - 3});
+        //$("#pointerInfoIconContainer").css({left:actualDimensions.width - $("#pointerInfoImage").width()*3.6, top:actualDimensions.top + actualDimensions.height - $("#pointerInfoImage").height()*1.6});
     }
 
     function onEnterFullscreen() {

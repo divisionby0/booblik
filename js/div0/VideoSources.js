@@ -11,19 +11,19 @@ var VideoSources = (function () {
     }
     VideoSources.prototype.create = function () {
         this.collection.add("HQ", [
-            { type: "video/mp4", src: "assets/video/HD.mp4" },
-            { type: "video/webm", src: "assets/video/HD.webm" },
-            { type: "video/ogg", src: "assets/video/HD.ogv" }
+            { type: "video/mp4", src: "assets/video/withPointerInfo/HD.mp4" },
+            { type: "video/webm", src: "assets/video/withPointerInfo/HD.webm" },
+            { type: "video/ogg", src: "assets/video/withPointerInfo/HD.ogv" }
         ]);
         this.collection.add("MQ", [
-            { type: "video/mp4", src: "assets/video/MED.mp4" },
-            { type: "video/webm", src: "assets/video/MED.webm" },
-            { type: "video/ogg", src: "assets/video/MED.ogv" }
+            { type: "video/mp4", src: "assets/video/withPointerInfo/MED.mp4" },
+            { type: "video/webm", src: "assets/video/withPointerInfo/MED.webm" },
+            { type: "video/ogg", src: "assets/video/withPointerInfo/MED.ogv" }
         ]);
         this.collection.add("LQ", [
-            { type: "video/mp4", src: "assets/video/LOW.mp4" },
-            { type: "video/webm", src: "assets/video/LOW.webm" },
-            { type: "video/ogg", src: "assets/video/LOW.ogv" }
+            { type: "video/mp4", src: "assets/video/withPointerInfo/LOW.mp4" },
+            { type: "video/webm", src: "assets/video/withPointerInfo/LOW.webm" },
+            { type: "video/ogg", src: "assets/video/withPointerInfo/LOW.ogv" }
         ]);
     };
     /*

@@ -197,13 +197,12 @@ video {
 
 
 #allZonesContainer{
-    /*
     pointer-events: none;
     position: absolute;
     z-index: 20;
     border: 0;
-    */
-    background-color: rgba(128, 0, 0, 0.5);
+    left: 0;
+    /*background-color: rgba(128, 255, 0, 0.5);*/
 }
 
 .frameContainer{
