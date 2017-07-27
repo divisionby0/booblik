@@ -15,16 +15,15 @@ declare var StartButtonListener:any;
 declare var ZoomInButtonListenerJS:any;
 class Application{
     protected scenes:Map<Scene>;
-    private commonScenePointerInfo:CommonScenePointerInfo;
-    private sceneBackButton:SceneBackButton;
+    protected sceneBackButton:SceneBackButton;
     private videoPlayer:Player;
     protected videoSources:VideoSources;
-    private currentScene:Scene;
-    private zoomInButtonListenerJS:any;
+    protected currentScene:Scene;
+    protected zoomInButtonListenerJS:any;
 
     private scene1Button:any;
 
-    private $j:any;
+    protected $j:any;
 
     private LOOPING:string = "looping";
     private ZOOMING_OUT:string = "zoomingOut";
@@ -33,34 +32,41 @@ class Application{
     private currentState:string;
 
     constructor(){
+        this.create();
+    }
+    
+    protected create():void{
         this.$j = jQuery.noConflict();
-        console.log("jQuery = ",this.$j);
+        console.log("Im Application jQuery = ",this.$j);
 
         this.createVideoSources();
-        this.commonScenePointerInfo = new CommonScenePointerInfo();
         this.sceneBackButton = new SceneBackButton();
         this.zoomInButtonListenerJS = new ZoomInButtonListenerJS();
 
         this.createScenes();
+        this.currentScene = this.scenes.get("intro");
+
         this.createPlayer();
-        //this.createScenes();
 
         this.createControlsListener();
         this.zoomInButtonListenerJS.init();
         this.zoomInButtonListenerJS.create();
 
         this.currentScene = this.scenes.get("intro");
-        
+
         new PathHoverListener();
         new ZoomOutButtonClickListener();
-        
+
+        this.createListeners();
+    }
+    protected createListeners():void{
         EventBus.addEventListener("ZOOM_OUT_CLICKED", ()=>this.onZoomOutClicked());
         EventBus.addEventListener("SCENE_BUTTON_CLICKED", (scene)=>this.onSceneButtonClicked(scene));
         EventBus.addEventListener("CHANGE_PLAYER_SOURCES", (sources)=>this.changePlayerSourcesHandler(sources));
         EventBus.addEventListener("ON_RESIZE", (dimensions)=>this.onResize(dimensions));
     }
 
-    private createPlayer():void{
+    protected createPlayer():void{
         this.videoPlayer = new Player(this.playerCallback);
     }
     
@@ -84,8 +90,8 @@ class Application{
         this.scenes.add("11", new Scene("11", 90.2, 91.3, 97.0, 98.2));
     }
 
-    private playerCallback = (data:any) => { // <-- note syntax here
-        //console.log("player callback called data=",data);
+    protected playerCallback = (data:any) => { // <-- note syntax here
+        //this.log("player callback called data="+data);
         var handler:string = data.handler;
 
         switch(handler){
@@ -176,7 +182,7 @@ class Application{
         this.startScene();
     }
 
-    private createControlsListener():void {
+    protected createControlsListener():void {
         this.$j(".overlayButton").click((event)=>this.controlButtonClicked(event));
         this.$j(".SVGHoverablePath").click(()=>this.onBackButtonClicked());
         this.$j("#backButton").click(()=>this.onBackButtonClicked());

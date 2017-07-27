@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Player</title>
+
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/js/lib/video/video.js/video.js/dist/video-js.min.css" rel="stylesheet">
+    <script src="/js/lib/video/video.js/video.js/dist/ie8/videojs-ie8.min.js"></script>
+    <script src="/js/lib/video/video.js/video.js/dist/video.min.js"></script>
+    <script src="/js/lib/jquery-3.1.0.js"></script>
+</head>
+<body>
+
+<!--
+<img class="leaf" id="leafTopLeft" src="assets/upper_left.png">
+<img class="leaf" id="leafTopRight" src="assets/upper_right.png">
+<img class="leaf" id="leafBottomLeft" src="assets/leaf_left.png">
+<img class="leaf" id="leafBottomRight" src="assets/leaf_right.png">
+-->
+
+<div class="wrapper" id="videoWrapper">
+    <div class="videocontent">
+        <video id="player"
+               class="video-js vjs-default-skin"
+               preload="auto"
+               controls
+        poster="assets/StartButton3.jpg">
+
+            <!--
+            <source src="assets/video/LOW_overlayed.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <source src="assets/video/LOW_overlayed.webm" type='video/webm; codecs="vp8, vorbis"' />
+            <source src="assets/video/LOW_overlayed.ogv" type='video/ogg; codecs="theora, vorbis"' />
+            -->
+
+            <source src="assets/video/withPointerInfo/HD.mp4" type="video/mp4" />
+            <source src="assets/video/withPointerInfo/HD.webm" type="video/webm" />
+            <source src="assets/video/withPointerInfo/HD.ogv" type="video/ogg" />
+
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+    </div>
+</div>
+
+<div id="pointerInfoIconContainer" class="pointerInfoIconContainer">
+    <img src="assets/ponter_icon.png" class="pointerInfoContent" id="pointerInfoImage">
+    <div class="pointerInfoContent">Выберите сектор</div>
+</div>
+
+<div id="metadataContainer"></div>
+
+
+</body>
+
+<script src="/js/div0/collections/Map.js"></script>
+<script src="/js/div0/collections/List.js"></script>
+<script src="/js/div0/collections/iterators/MapIterator.js"></script>
+<script src="/js/div0/collections/iterators/ListIterator.js"></script>
+<script src="/js/div0/events/EventBus.js"></script>
+
+<script src="/js/div0/utils/VideoDimensions.js"></script>
+<script src="/js/div0/FullscreenListener.js"></script>
+<script src="/js/testingPlayer.js"></script>
+
+</html>

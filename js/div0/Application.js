@@ -18,7 +18,7 @@ var Application = (function () {
         this.ZOOMING_OUT = "zoomingOut";
         this.ZOOMING_IN = "zoomingIn";
         this.playerCallback = function (data) {
-            //console.log("player callback called data=",data);
+            //this.log("player callback called data="+data);
             var handler = data.handler;
             switch (handler) {
                 case 'rangeComplete':
@@ -35,26 +35,32 @@ var Application = (function () {
                     break;
             }
         };
+        this.create();
+    }
+    Application.prototype.create = function () {
         this.$j = jQuery.noConflict();
-        console.log("jQuery = ", this.$j);
+        console.log("Im Application jQuery = ", this.$j);
         this.createVideoSources();
-        this.commonScenePointerInfo = new CommonScenePointerInfo();
         this.sceneBackButton = new SceneBackButton();
         this.zoomInButtonListenerJS = new ZoomInButtonListenerJS();
         this.createScenes();
+        this.currentScene = this.scenes.get("intro");
         this.createPlayer();
-        //this.createScenes();
         this.createControlsListener();
         this.zoomInButtonListenerJS.init();
         this.zoomInButtonListenerJS.create();
         this.currentScene = this.scenes.get("intro");
         new PathHoverListener();
         new ZoomOutButtonClickListener();
+        this.createListeners();
+    };
+    Application.prototype.createListeners = function () {
+        var _this = this;
         EventBus.addEventListener("ZOOM_OUT_CLICKED", function () { return _this.onZoomOutClicked(); });
         EventBus.addEventListener("SCENE_BUTTON_CLICKED", function (scene) { return _this.onSceneButtonClicked(scene); });
         EventBus.addEventListener("CHANGE_PLAYER_SOURCES", function (sources) { return _this.changePlayerSourcesHandler(sources); });
         EventBus.addEventListener("ON_RESIZE", function (dimensions) { return _this.onResize(dimensions); });
-    }
+    };
     Application.prototype.createPlayer = function () {
         this.videoPlayer = new Player(this.playerCallback);
     };

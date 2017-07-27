@@ -4,8 +4,8 @@
 ///<reference path="events/EventBus.ts"/>
 //declare var videojs:any;
 class Player{
-    private player:any;
-    private callback:Function;
+    protected player:any;
+    protected callback:Function;
     private range:TimeRange;
     private currentTime:number;
     private state:string;
@@ -18,14 +18,26 @@ class Player{
     private $j:any;
 
     constructor(callback:any){
+        this.log("Player create")
         this.$j = jQuery.noConflict();
         this.callback = callback;
         //this.disableSpinner();
-        var player = videojs('player');
+        this.createPlayer();
+    }
+    
+    protected createPlayer():void{
+        this.player = videojs('player');
         videojs('player').ready(()=>this.onPlayerReady());
+        videojs('player').on("loadedmetadata",()=>this.onMetadataLoaded());
     }
 
-    private onPlayerReady():void {
+    protected onMetadataLoaded():void{
+        this.log("ON PLAYER METADATA LOADED");
+        EventBus.dispatchEvent("ON_PLAYER_METADATA_LOADED",null);
+    }
+
+    protected onPlayerReady():void {
+        this.log("-- Player ready");
         this.player = videojs('player');
         this.createListeners();
         this.callback.call(this, {handler:"playerCreationComplete"});
@@ -42,6 +54,7 @@ class Player{
             this.enableVideoPreloader();
             this.onStateChanged();
             this.range = range;
+            console.log("Player range=",this.range,"start=",this.range.getStart());
             this.player.currentTime(this.range.getStart());
             this.startPlay();
         }
@@ -65,7 +78,7 @@ class Player{
         this.$j('.vjs-fullscreen-control').click();
     }
     
-    private createListeners():void {
+    protected createListeners():void {
         this.player.on("timeupdate", ()=>this.onTimeUpdate());
     }
 
@@ -121,7 +134,7 @@ class Player{
         this.onStateChanged();
     }
 
-    private createMetadataListener():void {
+    protected createMetadataListener():void {
         // TODO переместить сюда код из resp.js касаемый vid.addEventListener( "loadedmetadata", onMetadataLoaded, false );
     }
 
@@ -131,5 +144,10 @@ class Player{
     private enableVideoPreloader():void {
         this.$j(".vjs-loading-spinner").css("display","block");
         setTimeout(()=>this.disableVideoPreloader(), 300);
+    }
+
+    protected log(message:string):void{
+        console.log(message);
+        EventBus.dispatchEvent("LOG_MESSAGE", message);
     }
 }

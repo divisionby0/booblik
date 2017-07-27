@@ -8,10 +8,23 @@ $( document ).ready(function($)
     var isMobile = false;
     var resizeTimerInterval;
 
-    var version = "0.0.1";
+    var version = "0.1.4";
     log(version);
+    log("vid="+vid);
 
-    vid.addEventListener( "loadedmetadata", onMetadataLoaded, false );
+    EventBus.addEventListener("ON_PLAYER_METADATA_LOADED", onPlayerMetadataLoaded);
+
+    //vid.addEventListener( "loadedmetadata", onMetadataLoaded, false );
+    //vid.addEventListener( "error", onError, false );
+
+    function onError(){
+        log("ON ERROR");
+    }
+    
+    function onPlayerMetadataLoaded(){
+        log("ON_PLAYER_METADATA_LOADED");
+        onMetadataLoaded();
+    }
 
     function onMetadataLoaded(){
         log("onMetadataLoaded");
@@ -63,6 +76,10 @@ $( document ).ready(function($)
         //$("#pointerInfoIconContainer").css("z-index", 2147483647);
         $("#frameContainer").css("z-index", 2147483647);
         $("#hoversContainer").css("z-index", 2147483647);
+    }
+
+    function startResizeTimer(){
+        resizeTimerInterval = setInterval(onResize, 1000);
     }
 
     function isMobileOrTablet(){

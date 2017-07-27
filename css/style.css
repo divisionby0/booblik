@@ -47,7 +47,16 @@ video {
 
 #startButton{
     position: absolute;
-    z-index:304000;
+    z-index:2147483647;
+    top:0;
+    left:0;
+}
+
+#metadataContainer{
+    position: absolute;
+    z-index:2147483647;
+    top:0;
+    left:0;
 }
 
 .allZones{

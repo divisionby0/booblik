@@ -5,18 +5,28 @@
 //declare var videojs:any;
 var Player = (function () {
     function Player(callback) {
-        var _this = this;
         this.IDLE = "idle";
         this.LOOPING = "looping";
         this.ZOOMING_OUT = "zoomingOut";
         this.ZOOMING_IN = "zoomingIn";
+        this.log("Player create");
         this.$j = jQuery.noConflict();
         this.callback = callback;
         //this.disableSpinner();
-        var player = videojs('player');
-        videojs('player').ready(function () { return _this.onPlayerReady(); });
+        this.createPlayer();
     }
+    Player.prototype.createPlayer = function () {
+        var _this = this;
+        this.player = videojs('player');
+        videojs('player').ready(function () { return _this.onPlayerReady(); });
+        videojs('player').on("loadedmetadata", function () { return _this.onMetadataLoaded(); });
+    };
+    Player.prototype.onMetadataLoaded = function () {
+        this.log("ON PLAYER METADATA LOADED");
+        EventBus.dispatchEvent("ON_PLAYER_METADATA_LOADED", null);
+    };
     Player.prototype.onPlayerReady = function () {
+        this.log("-- Player ready");
         this.player = videojs('player');
         this.createListeners();
         this.callback.call(this, { handler: "playerCreationComplete" });
@@ -32,6 +42,7 @@ var Player = (function () {
             this.enableVideoPreloader();
             this.onStateChanged();
             this.range = range;
+            console.log("Player range=", this.range, "start=", this.range.getStart());
             this.player.currentTime(this.range.getStart());
             this.startPlay();
         }
@@ -113,6 +124,10 @@ var Player = (function () {
         var _this = this;
         this.$j(".vjs-loading-spinner").css("display", "block");
         setTimeout(function () { return _this.disableVideoPreloader(); }, 300);
+    };
+    Player.prototype.log = function (message) {
+        console.log(message);
+        EventBus.dispatchEvent("LOG_MESSAGE", message);
     };
     return Player;
 }());

@@ -10,41 +10,32 @@ var VideoSources = (function () {
         this.create();
     }
     VideoSources.prototype.create = function () {
+        this.collection.add("HQ", [
+            { type: "video/mp4", src: "assets/video/withPointerInfo/HD.mp4" },
+            { type: "video/webm", src: "assets/video/withPointerInfo/HD.webm" },
+            { type: "video/ogg", src: "assets/video/withPointerInfo/HD.ogv" }
+        ]);
+        this.collection.add("MQ", [
+            { type: "video/mp4", src: "assets/video/withPointerInfo/MED.mp4" },
+            { type: "video/webm", src: "assets/video/withPointerInfo/MED.webm" },
+            { type: "video/ogg", src: "assets/video/withPointerInfo/MED.ogv" }
+        ]);
+        this.collection.add("LQ", [
+            { type: "video/mp4", src: "assets/video/withPointerInfo/LOW.mp4" },
+            { type: "video/webm", src: "assets/video/withPointerInfo/LOW.webm" },
+            { type: "video/ogg", src: "assets/video/withPointerInfo/LOW.ogv" }
+        ]);
         /*
         this.collection.add("HQ", [
-            {type: "video/mp4", src: "assets/video/withPointerInfo/HD.mp4"},
-            {type: "video/webm", src: "assets/video/withPointerInfo/HD.webm"},
-            {type: "video/ogg", src: "assets/video/withPointerInfo/HD.ogv"}
+            {type: "video/mp4", src: "http://vjs.zencdn.net/v/oceans.mp4"}
         ]);
-
-
         this.collection.add("MQ", [
-            {type: "video/mp4", src: "assets/video/withPointerInfo/MED.mp4"},
-            {type: "video/webm", src: "assets/video/withPointerInfo/MED.webm"},
-            {type: "video/ogg", src: "assets/video/withPointerInfo/MED.ogv"}
+            {type: "video/mp4", src: "http://vjs.zencdn.net/v/oceans.mp4"}
         ]);
-
         this.collection.add("LQ", [
-            {type: "video/mp4", src: "assets/video/withPointerInfo/LOW.mp4"},
-            {type: "video/webm", src: "assets/video/withPointerInfo/LOW.webm"},
-            {type: "video/ogg", src: "assets/video/withPointerInfo/LOW.ogv"}
+            {type: "video/mp4", src: "http://vjs.zencdn.net/v/oceans.mp4"}
         ]);
         */
-        this.collection.add("HQ", [
-            { type: "video/mp4", src: "assets/video/withPointerInfo/LOW.mp4" },
-            { type: "video/webm", src: "assets/video/withPointerInfo/LOW.webm" },
-            { type: "video/ogg", src: "assets/video/withPointerInfo/LOW.ogv" }
-        ]);
-        this.collection.add("MQ", [
-            { type: "video/mp4", src: "assets/video/withPointerInfo/LOW.mp4" },
-            { type: "video/webm", src: "assets/video/withPointerInfo/LOW.webm" },
-            { type: "video/ogg", src: "assets/video/withPointerInfo/LOW.ogv" }
-        ]);
-        this.collection.add("LQ", [
-            { type: "video/mp4", src: "assets/video/withPointerInfo/LOW.mp4" },
-            { type: "video/webm", src: "assets/video/withPointerInfo/LOW.webm" },
-            { type: "video/ogg", src: "assets/video/withPointerInfo/LOW.ogv" }
-        ]);
     };
     /*
     public getSources(key:string):any[]{
