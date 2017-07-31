@@ -2,9 +2,8 @@ var $ = jQuery.noConflict();
 
 $( document ).ready(function($)
 {
-
     Logger.init();
-    var ver = "0.1.6";
+    var ver = "0.3.3";
     log("TESTING PLAYER ready");
     log(ver);
     //var vid = document.getElementById("player");
@@ -15,23 +14,34 @@ $( document ).ready(function($)
 
     var isMobile = false;
 
+    //EventBus.addEventListener("ON_PLAYER_METADATA_LOADED", onPlayerMetadataLoaded);
     video.addEventListener( "loadedmetadata", onMetadataLoaded, false );
+
+    var application;
+
+    function onPlayerMetadataLoaded(){
+        onMetadataLoaded();
+    }
 
     function onMetadataLoaded(){
         log("TESTING_PLAYER_onMetadataLoaded");
         vid = document.getElementById("player");
-        log("vid="+video);
+        //log("vid="+video);
         //$("#metadataContainer").html("<h1>Metadata loaded !!!</h1>");
-        var app = new Application_iOS();
-        app.init();
+        if(!application){
+            application = new Application_iOS();
+            application.init();
+        }
 
         $("#startButton").show();
         isMobile = isMobileOrTablet();
         log("isMobile="+isMobile);
         log("isIOS="+isIOS());
+        
         onResize();
         EventBus.dispatchEvent("ON_RESIZE", actualDimensions);
-        //EventBus.addEventListener("ON_ENTER_FULLSCREEN", onEnterFullscreen);
+        EventBus.addEventListener("ON_ENTER_FULLSCREEN", onEnterFullscreen);
+        EventBus.addEventListener("ON_EXIT_FULLSCREEN", onExitFullscreen);
     }
 
     function onResize(){
@@ -42,12 +52,12 @@ $( document ).ready(function($)
         var leftOffset = (documentWidth - actualDimensions.width)/2;
         var topOffset = (offsetHeight - actualDimensions.height)/2;
 
+        log("documentWidth="+documentWidth);
         log("actualDimensions width: "+actualDimensions.width+"  height:"+actualDimensions.height+"  videoRatio: "+actualDimensions.vidRatio);
 
         actualDimensions.top = topOffset;
         actualDimensions.left = leftOffset;
 
-        /*
         if(isMobile){
             $("#allZonesContainer").css({top: actualDimensions.top, width: actualDimensions.width, height: actualDimensions.height});
             $("#pointerInfoIconContainer").css({left:actualDimensions.width - $("#pointerInfoImage").width()*3.6, top:actualDimensions.top + actualDimensions.height - $("#pointerInfoImage").height()*1.6});
@@ -64,7 +74,41 @@ $( document ).ready(function($)
 
         $(".zoomOutButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width, height: actualDimensions.height});
         $("#startButton").css({top: topOffset, left: leftOffset, width: actualDimensions.width - 3, height: actualDimensions.height - 3});
+
+    }
+
+    function changeDepth(){
+
+        log("changing depth");
+
+        $("#player").css("z-index", 2147483647);
+        $("#startButton").css("z-index", 2147483647);
+        $("#allZonesContainer").css("z-index", 2147483647);
+        $("#logContainer").css("z-index", 2147483647);
+
+        /*
+        $("#player").css("z-index", 21473);
+        $("#startButton").css("z-index", 21474);
+        $("#allZonesContainer").css("z-index", 21475);
+        $("#logContainer").css("z-index", 21476);
         */
+
+        log("player depth: "+$("#player").css("z-index"));
+        log("startButton depth: "+$("#startButton").css("z-index"));
+        log("allZonesContainer depth: "+$("#allZonesContainer").css("z-index"));
+        log("logContainer depth: "+$("#logContainer").css("z-index"));
+    }
+
+    function onEnterFullscreen() {
+        log(" -- ON ENTER FULLSCREEN");
+        onResize();
+        changeDepth();
+    }
+
+    function onExitFullscreen(){
+        log("-- ON EXIT FULLSCREEN");
+        onResize();
+        changeDepth();
     }
 
     function isMobileOrTablet(){
@@ -79,20 +123,16 @@ $( document ).ready(function($)
         return check;
     }
 
-
     function log(message){
         //console.log(message);
         EventBus.dispatchEvent("LOG_MESSAGE", message);
-        //$("#logTextArea").append(message+"\n");
     }
 
 
-    /*
     $( window ).resize(function() {
         log("onResize");
         onResize();
+        changeDepth();
         EventBus.dispatchEvent("ON_RESIZE", actualDimensions);
     });
-    */
-
 });

@@ -12,7 +12,6 @@ html, body{
 
 #player{
     position: absolute;
-    z-index: 15;
     top:0;
     left:0;
     width: 100%;
@@ -43,13 +42,6 @@ video {
     border:none;
     margin:0;
     padding:0;
-}
-
-#startButton{
-    position: absolute;
-    z-index:2147483647;
-    top:0;
-    left:0;
 }
 
 #metadataContainer{
@@ -193,9 +185,6 @@ video {
     display: none;
 }
 .pointerInfoContent{
-    /*
-    width: auto;
-    */
     display: block;
     text-align: center;
     font-family: Calibri;
@@ -208,10 +197,6 @@ video {
 #allZonesContainer{
     pointer-events: none;
     position: absolute;
-    z-index: 20;
-    border: 0;
-    left: 0;
-    /*background-color: rgba(128, 255, 0, 0.5);*/
 }
 
 .frameContainer{
@@ -223,9 +208,16 @@ video {
     left:0;
 }
 
+#startButton{
+    position: absolute;
+    z-index:2147483646;
+    top:0;
+    left:0;
+}
+
 #logContainer{
     position: absolute;
-    z-index: 30;
+    z-index:2147483646;
     top:0;
     left:0;
 }
@@ -244,6 +236,7 @@ video {
 }
 
 /* player settings */
+/*
 .vjs-tech {
     pointer-events: none;
 }
@@ -258,6 +251,7 @@ video {
 .vjs-big-play-button{
     display: none !important;
 }
+*/
 
 svg {
     pointer-events: visibleFill;
@@ -322,4 +316,10 @@ svg {
     height: 100%;
     z-index: 15;
     background-color: rgba(17,46,200,0.4);
+}
+
+#overlayContainer{
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Separated videos</title>
+    <link href="css/sepvideos.css" rel="stylesheet">
+
+    <link href="js/lib/video/video.js/video.js/dist/video-js.min.css" rel="stylesheet">
+    <script src="js/lib/video/video.js/video.js/dist/ie8/videojs-ie8.min.js"></script>
+    <script src="js/lib/video/video.js/video.js/dist/video.min.js"></script>
+    <script src="js/lib/jquery-3.1.0.js"></script>
+
+    <script src="/js/div0/collections/Map.js"></script>
+    <script src="/js/div0/collections/List.js"></script>
+    <script src="/js/div0/collections/iterators/MapIterator.js"></script>
+    <script src="/js/div0/collections/iterators/ListIterator.js"></script>
+    <script src="/js/div0/events/EventBus.js"></script>
+
+    <script src="js/div0/utils/VideoDimensions.js"></script>
+    <script src="js/sepvideos.js"></script>
+</head>
+<body>
+<ul>
+    <li><a class="zoneButton" data-sceneid="-1" href="#">MAIN</a></li>
+    <li><a class="zoneButton" data-sceneid="0" href="#">Zone 1</a></li>
+    <li><a class="zoneButton" data-sceneid="1" href="#">Zone 2</a></li>
+    <li><a class="zoneButton" data-sceneid="2" href="#">Zone 3</a></li>
+    <li><a class="zoneButton" data-sceneid="3" href="#">Zone 4</a></li>
+</ul>
+
+<video id="player"
+       class="video-js vjs-default-skin"
+       preload="auto"
+       loop="true"
+       controls
+       autoplay>
+    <source src="assets/video/separated/11_full_overlayed_converted_with_pointer_info.mp4" type='video/mp4' />
+
+    <!--<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />-->
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+<!--
+<div id="preloaderContainer">
+    <div id="preloader"><img src="assets/preloaderImage1.jpg"></div>
+</div>
+-->
+
+</body>
+</html>

@@ -7,6 +7,12 @@ var Application_iOS = function(){
     var zoomInButtonListenerJS;
     var currentScene;
     var player;
+    var playerJS;
+    var currentState;
+
+    var LOOPING = "looping";
+    var ZOOMING_OUT = "zoomingOut";
+    var ZOOMING_IN = "zoomingIn";
     
     function log(message){
         //console.log(message);
@@ -37,10 +43,6 @@ var Application_iOS = function(){
         EventBus.addEventListener("ZOOM_OUT_CLICKED", onZoomOutClicked);
         EventBus.addEventListener("SCENE_BUTTON_CLICKED", onSceneButtonClicked);
         EventBus.addEventListener("ON_RESIZE", onResize);
-    }
-
-    function onLogMessage(message){
-        log(message);
     }
     
     function onZoomOutClicked(){
@@ -78,7 +80,6 @@ var Application_iOS = function(){
 
     function controlButtonClicked(event){
         var sceneId = $(event.target).data("scene");
-        log("selected scene ID "+sceneId);
         this.onSceneSelect(sceneId);
         this.hideScenesControls();
         this.hidePointerInfoContainer();
@@ -93,15 +94,11 @@ var Application_iOS = function(){
     }
 
     function startButtonClickHandler(event){
-        log("START CLICKED");
-        /*
-        var myPlayer = videojs('player');
-        myPlayer.play();
+        player.play();
+        player.goFullScreen();
 
-        this.videoPlayer.goFullScreen();
-        this.$j("#startButton").hide();
-        this.$j(".overlay_back_button").css("z-index", 2147483647);
-        */
+        $("#startButton").hide();
+        $(".overlay_back_button").css("z-index", 2147483647);
     }
     function stopButtonClickHandler(){
        // videoPlayer.stopPlaying();
@@ -125,12 +122,12 @@ var Application_iOS = function(){
     }
 
     function createPlayer(){
-        log("App creating player...");
-        player = new PlayerIOS(playerCallback, videojs('player'));
+        playerJS = videojs('player');
+        player = new PlayerIOS(playerCallback, playerJS);
     }
 
     function playerCallback(data){
-        log("player callback called data="+data.handler);
+        //log("player callback called data="+data.handler);
         var handler = data.handler;
 
         switch(handler){
@@ -139,16 +136,29 @@ var Application_iOS = function(){
                 //this.onRangeComplete();
                 break;
             case 'playerCreationComplete':
-                //this.currentState = this.LOOPING;
-               // this.startIntro();
-                //StartButtonListener.init();
+                currentState = LOOPING;
+                startIntro();
+                //playerJS.el().appendChild($("#allZonesContainer"));
+                StartButtonListener.init();
+                //log("PLAYER READY. all zonesContainer moved to playerJS");
                 break;
             case 'playerStateChanged':
                // this.onPlayerStateChanged(data.state);
                 break;
         }
     }
-    
+
+    function startScene(){
+        var range = scenes.get(currentScene.getId()).getRange();
+        currentState = ZOOMING_IN;
+        player.play(range);
+    }
+
+    function startIntro(){
+        var range = scenes.get(currentScene.getId()).getRange();
+        player.play(range);
+    }
+
     
     return{
         init:function(){
@@ -160,10 +170,7 @@ var Application_iOS = function(){
 
             createScenes();
             currentScene = scenes.get("intro");
-            log("current scene "+currentScene);
-
-            createPlayer();
-
+            
             createControlsListener();
             zoomInButtonListenerJS.init();
             zoomInButtonListenerJS.create();
@@ -171,8 +178,9 @@ var Application_iOS = function(){
             new PathHoverListener();
             new ZoomOutButtonClickListener();
 
-            log("!! CREATION FINISHED");
             createListeners();
+
+            createPlayer();
         }
     }
 }

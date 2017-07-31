@@ -21,6 +21,9 @@
 <img class="leaf" id="leafBottomRight" src="assets/leaf_right.png">
 -->
 
+<div id="startButton" style="display: none;"><img src="assets/StartButton3.jpg" style="width: 100%; height: auto;"></div>
+
+<div>
 <video id="player"
        class="video-js vjs-default-skin"
 	   controls
@@ -33,16 +36,8 @@
     <!--<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />-->
     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 </video>
-
-<div id="logContainer">
-	<textarea name="logTextArea" id="logTextArea" cols="30" rows="10">
-
-	</textarea>
-</div>
-
-
-<div id="allZonesContainer">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="allZonesSVG" style="border: 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+	<div id="allZonesContainer">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="allZonesSVG" style="border: 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
 
         <radialGradient id="SVGID_1_" cx="625.615" cy="120.6003" r="114.971" gradientTransform="matrix(-0.9998 0.0194 0.0149 0.768 1188.6891 348.9314)" gradientUnits="userSpaceOnUse">
 		<stop  offset="0.0513" style="stop-color:#FFFF96"/>
@@ -217,6 +212,14 @@
 </svg>
 </div>
 
+<div id="logContainer">
+	<textarea name="logTextArea" id="logTextArea" cols="50" rows="10">
+
+	</textarea>
+</div>
+
+</div>
+
 
 <div class="overlay_back_button" style="display: none;" id="backButton"><img src="assets/backButtonRed.png" id="zoomOutMagnifierImage"></div>
 <button id="stopButton" style="display: none;">STOP</button>
@@ -230,23 +233,20 @@
 <script src="/js/div0/events/EventBus.js"></script>
 
 <!--
-
-<script src="/js/div0/FullscreenListener.js"></script>
-
-<script src="/js/div0/ShowZoomOutButton.js"></script>
-<script src="/js/div0/HideZoomOutButton.js"></script>
-
 <script src="/js/div0/utils/Logger.js"></script>
 <script src="/js/div0/Application.js"></script>
 -->
+
 <!--
 <script src="/js/resp.js"></script>
 <script src="/js/appInit.js"></script>
 -->
+
 <script src="/js/div0/utils/Logger.js"></script>
 <script src="/js/div0/utils/VideoDimensions.js"></script>
 <script src="/js/div0/TimeRange.js"></script>
 
+<script src="/js/div0/FullscreenListener.js"></script>
 <script src="/js/div0/ZoomOutButtonClickListener.js"></script>
 <script src="/js/div0/PathHoverListener.js"></script>
 <script src="/js/div0/Scene.js"></script>
@@ -255,13 +255,12 @@
 <script src="/js/div0/SceneBackButton.js"></script>
 <script src="/js/div0/VideoSources.js"></script>
 
+<script src="/js/div0/ShowZoomOutButton.js"></script>
+<script src="/js/div0/HideZoomOutButton.js"></script>
+
 <script src="/js/div0/StartButtonListener.js"></script>
 <script src="/js/div0/PlayerIOS.js"></script>
 
-<!--
-<script src="/js/div0/Application.js"></script>
-<script src="/js/div0/ApplicationIOS.js"></script>
--->
 <script src="/js/div0/Application_iOS.js"></script>
 <script src="/js/testingPlayer.js"></script>
 

@@ -1,0 +1,25 @@
+html, body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #b9d7ad;
+}
+
+ul {
+    position: absolute;
+    z-index: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: red;
+}
+
+.video-js, .vjs-no-js{
+    background-color: #b9d7ad !important;
+}
+
+#player{
+    width: 100%;
+    height: 100%;
+}

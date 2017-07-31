@@ -15,10 +15,11 @@ class PlayerIOS{
     private ZOOMING_IN:string = "zoomingIn";
 
 
+
     constructor(callback:any, playerObject:any){
-        this.log("IM IOSPlayer");
         this.$j = jQuery.noConflict();
         this.callback = callback;
+        
         //this.disableSpinner();
         this.createPlayer(playerObject);
     }
@@ -29,12 +30,12 @@ class PlayerIOS{
         if(this.state == this.ZOOMING_IN){
             if(this.currentTime > this.range.getLoop().getStart()){
                 this.state = this.LOOPING;
-                //this.onStateChanged();
+                this.onStateChanged();
             }
         }
         else if(this.state == this.LOOPING){
             if(this.currentTime > this.range.getLoop().getFinish()){
-                //this.onLoopComplete();
+                this.onLoopComplete();
             }
         }
         else if(this.state == this.ZOOMING_OUT){
@@ -44,16 +45,67 @@ class PlayerIOS{
         }
     }
 
+    public play(range:TimeRange = null):void{
+
+        if(range){
+            this.state = this.ZOOMING_IN;
+            //this.enableVideoPreloader();
+            this.onStateChanged();
+            this.range = range;
+            this.player.currentTime(this.range.getStart());
+            this.startPlay();
+        }
+        else{
+            this.player.play();
+        }
+    }
+
+    public goFullScreen():void{
+        this.$j('.vjs-fullscreen-control').click();
+        this.log("PlayerIOS go fullscreen");
+    }
+
+    private onLoopComplete():void {
+        this.player.currentTime(this.range.getLoop().getStart());
+        this.state = this.LOOPING;
+        this.onStateChanged();
+    }
+
+    /*
+    private disableVideoPreloader():void {
+        //this.$j(".vjs-loading-spinner").css("display","none");
+    }
+    private enableVideoPreloader():void {
+        //this.$j(".vjs-loading-spinner").css("display","block");
+        //setTimeout(()=>this.disableVideoPreloader(), 300);
+    }
+    */
+
+    private startPlay():void{
+        this.player.play();
+    }
+    private stopPlay():void{
+        this.player.pause();
+    }
+
+    private onStateChanged():void{
+        this.callback.call(this, {handler:"playerStateChanged", state:this.state});
+        if(this.state == this.LOOPING){
+            //this.disableVideoPreloader();
+        }
+        else{
+           // this.enableVideoPreloader();
+        }
+    }
+
 
     protected createPlayer(playerObject:any):void{
-        this.log("Creating iOS player...");
         this.player = playerObject;
         this.player.ready(()=>this.onPlayerReady());
         this.player.on("loadedmetadata",()=>this.onMetadataLoaded());
     }
 
     protected onPlayerReady():void {
-        this.log("-- iOS Player ready");
         //this.player = videojs('player');
         this.createListeners();
         this.callback.call(this, {handler:"playerCreationComplete"});
@@ -65,7 +117,6 @@ class PlayerIOS{
     }
 
     protected onMetadataLoaded():void{
-        this.log("ON PLAYER METADATA LOADED");
         EventBus.dispatchEvent("ON_PLAYER_METADATA_LOADED",null);
     }
 
@@ -74,7 +125,6 @@ class PlayerIOS{
     }
 
     protected log(message:string):void{
-        //console.log(message);
         EventBus.dispatchEvent("LOG_MESSAGE", message);
     }
 }
