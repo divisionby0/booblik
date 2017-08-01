@@ -29,7 +29,13 @@ $( document ).ready(function($)
     }
 
     function onZoneButtonClicked(){
+        changePosterToPreloader();
         loadScene();
+    }
+
+    function changePosterToPreloader(){
+        var poster = "url('assets/preloaderImage1.jpg')";
+        $('video').attr('poster', "assets/preloaderImage1.jpg");
     }
 
     $(".zoomInButton").click(function(){
