@@ -2,8 +2,8 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>Separated videos</title>
-    <link href="css/sepvideosandzones.css" rel="stylesheet">
+    <title>IOS separated videos version</title>
+    <link href="css/iosSeparatedVideos.css" rel="stylesheet">
 
     <link href="/js/lib/video/video.js/video.js/dist/video-js.min.css" rel="stylesheet">
     <script src="/js/lib/video/video.js/video.js/dist/ie8/videojs-ie8.min.js"></script>
@@ -11,11 +11,10 @@
     <script src="/js/lib/jquery-3.1.0.js"></script>
 
 	<script src="js/div0/utils/VideoDimensions.js"></script>
-
-    <script src="js/sepvideosandzones.js"></script>
+    <script src="js/iosSeparatedVideos.js"></script>
 </head>
 <body>
-<!--
+
 <ul>
     <li><a class="zoneButton" data-sceneid="-1" href="#">Main</a></li>
     <li><a class="zoneButton" data-sceneid="1" href="#">Zone 1</a></li>
@@ -23,7 +22,6 @@
     <li><a class="zoneButton" data-sceneid="3" href="#">Zone 3</a></li>
     <li><a class="zoneButton" data-sceneid="4" href="#">Zone 4</a></li>
 </ul>
--->
 	<div id="allZonesContainer" class="zonesDisabled">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="allZonesSVG" style="border: 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
 
@@ -100,14 +98,14 @@
 		<stop  offset="1" style="stop-color:#FAEE4E;stop-opacity:0"/>
 	</radialGradient>
 
-<path class="zoomInButton" data-scene="1" fill="url(#SVGID_1_)" d="M 637.667,402.001 696.667,462.334 697.125,489.875
+<path class="zoomInButton" data-scene="1" fill="url(#SVGID_1_)" fill-opacity="0" d="M 637.667,402.001 696.667,462.334 697.125,489.875
 		680.667,494.334 655.625,501.625 623.375,509.75 597.781,513.906 569.875,517.875 550.251,519.834 528.376,521.043
 		508.501,521.672 490.334,522.001 451.793,520.917 452,493.001 456.333,439.334 450,434.001 448.333,427.334 450,419.334
 		458.333,414.001 458.333,394.667 493.667,371.334 527,389.667 551.334,375.334 559.334,374.334 567,374.667 573.334,376.001
 		583.334,369.667 593.334,375.001 602.667,369.667 636.667,385.667 	z">
     <text transform="matrix(1 0 0 1 533.666 453.668)" fill="#39B54A" font-family="'MyriadPro-Regular'" font-size="12">увеличить</text>
 </path>
-<path class="zoomInButton" data-scene="2" fill="url(#SVGID_2_)" d="M 456.666,405.668 450.666,400.001 445.999,400.001
+<path class="zoomInButton" data-scene="2" fill="url(#SVGID_2_)" fill-opacity="0" d="M 456.666,405.668 450.666,400.001 445.999,400.001
 		439.332,400.001 433.999,398.001 426.666,401.834 421.666,398.001 413.999,398.001 409.999,398.001 405.332,398.001
 		403.332,393.001 397.666,393.001 390.999,391.334 386.332,394.001 382.666,392.668 378.332,394.668 368.999,391.334
 		362.999,384.334 360.332,385.668 357.666,387.668 355.999,382.668 352.666,382.668 350.666,381.334 346.999,383.334
@@ -115,7 +113,7 @@
 		263.999,486.001 298.666,497.334 334.999,506.334 365.666,512.334 391.999,516.334 420.666,519.334 450.167,520.833
 		450.333,493.333 455.167,440 448.333,434.333 447,427.333 448.333,418.667 456.666,412.667 	z"></path>
 
-<path class="zoomInButton" data-scene="3" fill="url(#SVGID_3_)" d="M 327,376.688 324.667,369.167 321.667,367.5 321.667,364.167
+<path class="zoomInButton" data-scene="3" fill="url(#SVGID_3_)" fill-opacity="0" d="M 327,376.688 324.667,369.167 321.667,367.5 321.667,364.167
 		315.5,361.5 310.167,357.167 303.5,356.5 302.667,350 296.667,347.167 292,349.5 286,354 277.167,347.167 269.167,340 263,333.5
 		258.167,327.666 254.833,323.333 267.833,323.333 267.833,307 206.167,307 206.167,322.5 233.667,322.833 232.667,331.667
 		225.667,337.334 204.667,338 199.667,341.167 191.667,342.667 184.333,341.167 112.333,351.667 112.333,380 127.375,399.25

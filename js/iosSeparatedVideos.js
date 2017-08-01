@@ -56,6 +56,7 @@ $( document ).ready(function($)
         if(isNaN(videoActualHeight)){
             videoActualHeight = Math.round(videoActualWidth/videoAspectRatio);
         }
+        //alert("actual "+videoActualWidth+":"+videoActualHeight+" offset bounds "+videoOffsetWidth+":"+videoOffsetHeight);
         resizeZones();
         resizeBackButton();
     }
