@@ -2,7 +2,10 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>IOS separated videos version</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Центр здоровья Нутрилайт">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Центр здоровья Нутрилайт</title>
     <link href="css/iosSeparatedVideos.css" rel="stylesheet">
 
     <link href="/js/lib/video/video.js/video.js/dist/video-js.min.css" rel="stylesheet">
@@ -22,8 +25,9 @@
     <li><a class="zoneButton" data-sceneid="3" href="#">Zone 3</a></li>
     <li><a class="zoneButton" data-sceneid="4" href="#">Zone 4</a></li>
 </ul>
-	<div id="allZonesContainer" class="zonesDisabled">
-		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="allZonesSVG" style="border: 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+
+<div id="allZonesContainer" class="zonesDisabled">
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="allZonesSVG" style="border: 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
 
         <radialGradient id="SVGID_1_" cx="625.615" cy="120.6003" r="114.971" gradientTransform="matrix(-0.9998 0.0194 0.0149 0.768 1188.6891 348.9314)" gradientUnits="userSpaceOnUse">
 		<stop  offset="0.0513" style="stop-color:#FFFF96"/>
@@ -196,8 +200,7 @@
 		754.5,374.625 754.25,363.375 751.875,360.75 746.25,358.125 743.125,355 729.75,348.375 728,344 725.875,341.625 721.75,339.666
 		717.688,339.666 717.375,346 	z"></path>
 </svg>
-	</div>
-
+</div>
 
 <video id="player"
        class="video-js vjs-default-skin"
@@ -205,6 +208,7 @@
        loop="true"
        controls
        autoplay
+	   webkit-playsinline="false" playsinline="false"
 poster="assets/StartButton3.jpg">
     <source src="assets/video/separated/11_full_overlayed_converted_with_pointer_info.mp4" type='video/mp4' />
 
@@ -213,5 +217,6 @@ poster="assets/StartButton3.jpg">
 
 <div class="overlay_back_button" id="backButton" style="display: none;"><img src="assets/backButtonRed.png" id="zoomOutMagnifierImage"></div>
 
+<div id="logCo"></div>
 </body>
 </html>

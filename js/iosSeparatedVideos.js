@@ -10,7 +10,6 @@ $( document ).ready(function($)
 
     var videoActualWidth;
     var videoActualHeight;
-    var zonesEnableTimer;
 
     var isFirstRun = true;
 
@@ -25,7 +24,7 @@ $( document ).ready(function($)
 
     var videoLeftOffset;
     var videoTopOffset;
-
+    var mediumScreenWidth = 800;
 
     player.addEventListener( "loadedmetadata", onMetadataLoaded, true );
 
@@ -58,18 +57,24 @@ $( document ).ready(function($)
         }
         //alert("actual "+videoActualWidth+":"+videoActualHeight+" offset bounds "+videoOffsetWidth+":"+videoOffsetHeight);
         resizeZones();
+        centerZones();
         resizeBackButton();
     }
 
     // TODO попробовать переделать БЕЗ постера, заметить его просто картинкой при нажатии на которую начинать видео
     function addPlayerClickEventListener(){
         $("#player").on("click",function(){
+            removePlayerClickEventListener();
+            //goFullscreen();
             enableZones();
             isFirstRun = false;
-            removePlayerClickEventListener();
         });
     }
 
+    function goFullscreen(){
+        $('.vjs-fullscreen-control').click();
+    }
+    
     function addBackButtonListener(){
         $("#backButton").click(function(){
             selectedScene = -1;
@@ -90,6 +95,7 @@ $( document ).ready(function($)
         $("#allZonesContainer").addClass("zonesEnabled");
 
         $("#allZonesContainer").show();
+        $("#allZonesContainer").css("display", "block");
     }
 
     function resizeBackButton(){
@@ -109,20 +115,44 @@ $( document ).ready(function($)
     }
 
     function resizeZones(){
-        console.log("resize zones to "+videoActualWidth+" : "+videoActualHeight);
+        //console.log("resize zones to "+videoActualWidth+" : "+videoActualHeight);
         $("#allZonesContainer").width(videoActualWidth);
         $("#allZonesContainer").height(videoActualHeight);
+    }
+
+    function centerZones(){
+        //$("#allZonesContainer").css({ top: '0', left: '0' });
+
+        /*
+        if(window.innerWidth < window.innerHeight){
+            $("#allZonesContainer").css({left: '50%' });
+        }
+        */
+        //$("#allZonesContainer").css({ top: '50%', left: '50%' });
 
         screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         screenHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
 
+        console.log(screenWidth, screenHeight);
         //var leftOffset = ($(document).width() - videoActualWidth)/2;
         //var topOffset = ($(document).height() - videoActualHeight)/2;
 
-        videoLeftOffset = (screenWidth - videoActualWidth)/2;
-        videoTopOffset = (screenHeight - videoActualHeight)/2;
+        videoLeftOffset = parseInt((screenWidth - videoActualWidth)/2);
+        videoTopOffset = parseInt((screenHeight - videoActualHeight)/2);
 
-        $("#allZonesContainer").css({top: videoTopOffset, left:videoLeftOffset});
+        //alert("videoLeftOffset="+videoLeftOffset+" screenHeight="+screenHeight+"  videoTopOffset="+videoTopOffset);
+
+        $("#allZonesContainer").css({top: 0, left:0});
+
+        if(screenWidth<screenHeight){
+            $("#allZonesContainer").css({top: videoTopOffset, left:videoLeftOffset});
+        }
+        else{
+            if(screenWidth > mediumScreenWidth){
+                // maybe ipad
+                $("#allZonesContainer").css({top: videoTopOffset, left:videoLeftOffset});
+            }
+        }
     }
 
     function loadScene(){
@@ -142,6 +172,27 @@ $( document ).ready(function($)
                 break;
             case 4:
                 sceneSrc = "assets/video/separated/4_loop_overlayed_converted.mp4";
+                break;
+            case 5:
+                sceneSrc = "assets/video/separated/5_loop_overlayed_converted.mp4";
+                break;
+            case 6:
+                sceneSrc = "assets/video/separated/6_loop_overlayed_converted.mp4";
+                break;
+            case 7:
+                sceneSrc = "assets/video/separated/7_loop_overlayed_converted.mp4";
+                break;
+            case 8:
+                sceneSrc = "assets/video/separated/8_loop_overlayed_converted.mp4";
+                break;
+            case 9:
+                sceneSrc = "assets/video/separated/9_loop_overlayed_converted.mp4";
+                break;
+            case 10:
+                sceneSrc = "assets/video/separated/10_loop_overlayed_converted.mp4";
+                break;
+            case 11:
+                sceneSrc = "assets/video/separated/11_loop_overlayed_converted.mp4";
                 break;
         }
         video.src(sceneSrc);
@@ -167,5 +218,10 @@ $( document ).ready(function($)
     $(".zoneButton").click(function(){
         selectedScene = parseInt($(this).data("sceneid"));
         onZoneButtonClicked();
+    });
+
+    $( window ).resize(function() {
+        //alert("on window resized");
+        onResize();
     });
 });

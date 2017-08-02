@@ -13,9 +13,7 @@ class PlayerIOS{
     private LOOPING:string = "looping";
     private ZOOMING_OUT:string = "zoomingOut";
     private ZOOMING_IN:string = "zoomingIn";
-
-
-
+    
     constructor(callback:any, playerObject:any){
         this.$j = jQuery.noConflict();
         this.callback = callback;
